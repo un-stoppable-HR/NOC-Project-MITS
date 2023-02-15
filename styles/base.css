@@ -1,0 +1,45 @@
+html {
+  --color-primary-100: rgb(236, 228, 223);
+  --color-primary-200: rgb(197, 174, 160);
+  --color-primary-300: rgb(158, 120, 97);
+  --color-primary-400: rgb(95, 72, 58);
+  --color-primary-500: rgb(32, 24, 19);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+
+#main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-200);
+}
+
+#main-header a {
+  text-decoration: none;
+}
+
+#mits-logo {
+  width: 130px;
+}
+
+#main-heading-container {
+  text-align: center;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  color: var(--color-primary-500);
+}
+
+#main-heading {
+  font-size: 1.5rem;
+}
+
+#sub-heading {
+  font-size: 0.75rem;
+}
