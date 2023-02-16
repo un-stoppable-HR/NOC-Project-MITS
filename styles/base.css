@@ -10,6 +10,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--color-primary-100);
 }
 
 /* Header */
@@ -42,4 +43,48 @@ body {
 
 #sub-heading {
   font-size: 0.75rem;
+}
+
+/* nav-header */
+
+/* icons */
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 40;
+}
+
+nav {
+  background-color: var(--color-primary-400);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  padding: 0.5rem 1rem 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-primary-100);
+  padding: 0.5rem 0.75rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+
+nav a:hover {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-500);
+}
+
+nav span {
+  padding-right: 0.25rem;
 }
