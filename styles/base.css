@@ -1,16 +1,9 @@
-html {
-  --color-primary-100: rgb(236, 228, 223);
-  --color-primary-200: rgb(197, 174, 160);
-  --color-primary-300: rgb(158, 120, 97);
-  --color-primary-400: rgb(95, 72, 58);
-  --color-primary-500: rgb(32, 24, 19);
-}
+@import url("/styles/colors.css");
 
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--color-primary-100);
 }
 
 /* icons */
@@ -27,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-primary-200);
+  background-color: var(--color-primary-150);
 }
 
 #main-header a {
@@ -100,7 +93,7 @@ nav span {
 /* footer-starts */
 
 footer {
-  background-color: var(--color-primary-200);
+  background-color: var(--color-primary-150);
 }
 
 #footer-contact {
