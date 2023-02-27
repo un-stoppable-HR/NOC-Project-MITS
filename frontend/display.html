@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Table</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/javascripts/time_table.js"></script>
+
+</head>
+
+<body style="background-color: #4bfc63;">
+<nav>
+  <a class="btn btnadd circle waves-effect" href="/time_table" >
+    <i class="material-icons">add</i>
+  </a>
+</nav>
+  <% if(status==false) {%>
+    <h2>
+      <%=data %>
+    </h2>
+    <% } else { %>
+      <div class="container white">
+
+        <table class="highlight centered">
+          <thead>
+            <tr>
+              <th>Room Number</th>
+              <th>Room Name</th>
+              <th>Location</th>
+              <th>Floor</th>
+              <th>Room Type</th>
+              <th>Row</th>
+              <th>Cloumn</th>
+              <th>Capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.map((item)=>{%>
+              <tr>
+                <td>
+                  <%=item.date%>
+                </td>
+                <td>
+                  <%=item.branch%>
+                </td>
+                <td>
+                  <%=item.subjectcode%>
+                </td>
+                <td>
+                  <%=item.subjectname%>
+                </td>
+                <td>
+                  <%=item.shift%>
+                </td>
+                <td>
+                  <%=item.semester%>
+                </td>
+                <td>
+                  <%=item.session%>
+                </td>
+                <td>
+                  <a class="white btnedit waves-effect" products="<%=JSON.stringify(item) %>">
+                    <i class="material-icons grey-text small">edit</i>
+                  </a>
+                </td>
+              </tr>
+              <%})%>
+          </tbody>
+        </table>
+
+        <!-- Modal Structure -->
+        <div id="timetable" class="modal" style="width:70%;overflow-y: hidden;max-height:fit-content;">
+          <div class="modal-content" style="width:100%;">
+            <div class="dContainer">
+              <div class="dBox">
+                <!-- <div class="headingBox"> -->
+                  <h2>Update/Delete schedule</h2>
+                <!-- </div> -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder=" Enter Room Number" id="room_number" type="text" class="validate">
+                        <label for="room_number">Room Number</label>
+                    </div>
+            
+                    <div class="input-field col s6">
+                        <input placeholder="Enter Roon Name" id="room_name" type="text" class="validate">
+                        <label for="room_name">Room Name</label>
+                      </div>
+            
+                      <div class="input-field col s12">
+                        <input placeholder="Enter Location" id="location" type="text" class="validate">
+                        <label for="location">Location</label>
+                    </div>
+            
+                    <div class="input-field col s6">
+                        <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Ground Floor</option>
+                          <option value="2">First Floor</option>
+                          <option value="3">Second Floor</option>
+                        </select>
+                        <label>Floor</label>
+                      </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Enter room Type" id="room_type" type="text" class="validate">
+                        <label for="room_type">Room Type</label>
+                    </div>
+                    
+                    <div class="input-field col s4">
+                        <input placeholder="Enter Row" id="row" type="text" class="validate">
+                        <label for="row">Row</label>
+                    </div>
+            
+                    <div class="input-field col s4">
+                        <input placeholder="Enter Cloumn" id="cloumn" type="text" class="validate">
+                        <label for="cloumn">Column</label>
+                    </div>
+            
+                    <div class="input-field col s4">
+                        <input placeholder="Enter Capacity" id="capacity" type="text" class="validate">
+                        <label for="capacity">Capacity</label>
+                    </div>
+        
+                  <div class="input-field col s4 offset-s2">
+                    <button class="btn-floating col s8 light-green wave-effect pulse">Update</button>
+                  </div>
+                  <div class="input-field col s4 offset-s2">
+                    <button class="btn-floating col s8 red wave-effect pulse">Delete</button>
+                  </div>
+                </div>
+                <div>
+                  <h1>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%} %>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.modal').modal();
+            
+         
+            $('.btnedit').click(function(){
+            
+  
+              $('#timetable').modal('open')
+            })
+
+    $('select').formSelect();
+  })
+</script>
+
+</html>

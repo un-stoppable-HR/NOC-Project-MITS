@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login-container{
+    position: relative;
+    height: 100vh;
+    background:linear-gradient(rgba(2, 2, 2, 0.651),rgba(0, 0, 0, 0.652)), url('./img/m2.jpeg');
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-box{
+    width: 30%;
+    position: absolute;
+    box-shadow: 3px 3px 10px 0 #1d1d1d;
+    place-items: center;
+    background-color: #fff;
+    padding: 50px 25px;
+    
+}
+.form-box h2{
+    width: 45%;
+    text-align: center;
+    box-shadow: 0 0 10px 0 #171515;
+    margin:-70px auto 35px;
+    height: 40px;
+    padding-top:5px;
+    color: #2e3b54;
+    background-color: #fff;
+    border-radius: 30px;
+    
+}
+.fp h2{
+        width: 60%;
+}
+.login .form-group input{
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    outline: none;
+    border: 1.5px solid #405377;
+    padding: 20px;
+}
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form-group{
+    margin: 20px auto;
+    position: relative;
+}
+.form-group label{
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #fff;
+    font-weight: 600;
+    padding: 0px 5px;
+}
+.login .btn{
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 15px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    background-color:#2e3b54;
+}
+.login a{
+    /* display: flex;
+    flex-direction:column ; */
+    font-size: 14px;
+    font-weight: 600;
+    float: right;
+    margin-top:10px ;
+    text-decoration: none;
+}
+.login a:hover{
+    text-decoration: underline;
+}
+.login .btn:hover{
+    background-color: #405377;
+}
+.form-box .google{
+    text-align: center;
+    
+}
+ .form-box h4{
+   text-align: center;
+   font-weight: 300;
+   font-size: 14px;
+   margin-bottom: 10px;
+}
+.google-login{
+  text-align: center;
+}
+.google-login img{
+   height: 14px;
+   width: 23px;
+   padding: 0px 5px;
+}
+.google-login button{
+    width: 55%;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 5px; 
+    border: 2px solid #2e3b54;
+    border-radius:20px ;
+    text-align: center;
+    color:#2e3b54;
+    background-color:transparent;
+    cursor: pointer;
+    
+}
+.google-login a{
+    cursor: pointer;
+    font-weight: 800;
+    color: #2e3b54;
+}
+.google-login a:hover{
+    text-decoration: underline;
+}
+@media (max-width:768px) {
+    html{
+        font-size: 60%;
+        width: 100%;
+    }
+    .form-box{
+        width: 80%;
+    }
+    .form-box h2{
+        width: 50%;
+        padding-top: 12px;
+    }
+    .form-group label{
+        position: absolute;
+        top: -5px;
+        left: 20px;
+    }
+    .google-login button{
+        width: 100%;
+    }
+    .login .btn{
+        padding: 10px 10px;
+    }
+    .login p{
+        font-size:12px;
+        padding:5px 0px ;
+    }
+    .fp h2{
+        width: 60%;
+}
+}
+@media(min-width:769px) and (max-width:1024px){
+    html{
+        font-size: 80%;
+        width: 100%;
+    }
+    .form-box{
+        width: 40%;
+    }
+    .form-box h2{
+        width: 50%;
+        padding-top: 10px;
+    }
+    .form-group label{
+        position: absolute;
+        top: -8px;
+        left: 20px;
+    }
+    .google-login button{
+        width: 65%;
+    }
+} 

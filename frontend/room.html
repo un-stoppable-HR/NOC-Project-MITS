@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Room Page</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/javascripts/time_table.js"></script>
+</head>
+
+<body class="lime ">
+  <form action="/room" method="POST">
+    <div class="container white">
+      <div class="row">
+        <div class="input-field col s6">
+            <input placeholder=" Enter Room Number" id="room_number" type="text" class="validate" name="room_no">
+            <label for="room_number">Room Number</label>
+        </div>
+
+        <div class="input-field col s6">
+            <input placeholder="Enter Roon Name" id="room_name" type="text" class="validate" name="room_name">
+            <label for="room_name">Room Name</label>
+        </div>
+
+        <div class="input-field col s12">
+            <input placeholder="Enter Location" id="location" type="text" class="validate" name="location">
+            <label for="location">Location</label>
+        </div>
+
+        <div class="input-field col s6">
+            <select class="floor" name="floor">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Ground Floor</option>
+              <option value="2">First Floor</option>
+              <option value="3">Second Floor</option>
+            </select>
+           <label>Floor</label>
+        </div>
+
+        <div class="input-field col s6">
+            <input placeholder="Enter room Type" id="room_type" type="text" class="validate" name="room_type">
+            <label for="room_type">Room Type</label>
+        </div>
+        
+        <div class="input-field col s4">
+            <input placeholder="Enter Row" id="row" type="text" class="validate" name="rrow">
+            <label for="row">Row</label>
+        </div>
+
+        <div class="input-field col s4">
+            <input placeholder="Enter Cloumn" id="cloumn" type="text" class="validate" name="rcolumn">
+            <label for="cloumn">Column</label>
+        </div>
+
+        <div class="input-field col s4">
+            <input placeholder="Enter Capacity" id="capacity" type="text" class="validate" name="rcapacity">
+            <label for="capacity">Capacity</label>
+        </div>
+
+        <div class="input-field col s4 offset-s2">
+          <button class="btn-floating col s8 light-blue wave-effect pulse" type="submit">Submit</button>
+        </div>
+
+        <div class="input-field col s4 offset-s2">
+          <button class="btn-floating col s8 red wave-effect pulse" type="reset">Reset</button>
+        </div>
+      </div>
+      <!--<div>
+        <h1>
+          <%=message%>
+        </h1>
+      </div>-->
+    </div>
+  </form>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+
+    $('select').formSelect();
+    // $('.modal').modal();
+    // $('.btnedit').click(function () {
+
+    // });
+  })
+</script>
+
+</html>
