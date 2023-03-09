@@ -118,3 +118,49 @@ footer span {
   font-weight: bold;
   font-size: 1.1rem;
 }
+
+/* Button */
+
+.btn {
+  font: inherit;
+  color: var(--color-primary-100);
+  background-color: var(--color-primary-400);
+  border: 2px solid var(--color-primary-400);
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  border-radius: 30px;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-alt {
+  font: inherit;
+  color: var(--color-primary-400);
+  background-color: var(--color-primary-100);
+  border: 2px solid var(--color-primary-400);
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  border-radius: 30px;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  color: var(--color-primary-400);
+  background-color: var(--color-primary-100);
+  cursor: pointer;
+}
+
+.btn-alt:hover {
+  color: var(--color-primary-100);
+  background-color: var(--color-primary-400);
+  cursor: pointer;
+}
+
+/* main */
+
+main {
+  padding: 1rem;
+  color: var(--color-primary-500);
+  font-size: 1rem;
+}

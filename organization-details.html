@@ -44,7 +44,6 @@
     <link rel="stylesheet" href="/styles/base.css" />
     <link rel="stylesheet" href="/styles/noc-form.css" />
   </head>
-
   <body>
     <header>
       <!-- main-header -->
@@ -169,220 +168,160 @@
       </div>
 
       <div id="NOC-form-container">
-        <h4 id="noc-form-sub-heading">Student's personal details</h4>
+        <h4 id="noc-form-sub-heading">
+          Organization details in which you are applying for Internship
+        </h4>
+
         <form action="/organization-details.html" method="GET">
           <ul id="input-fields-list">
             <li>
-              <label for="student-email">Email</label>
-              <input
-                type="email"
-                id="student-email"
-                name="student-email"
-                placeholder="Your Email"
-                required
-              />
-            </li>
-            <li>
-              <label for="student-enrollment-no">Enrollment Number</label>
+              <label for="org-name">Organization / Company Name</label>
               <input
                 type="text"
-                id="student-enrollment-no"
-                name="student-enrollment-no"
-                placeholder="Your Enrollment Number"
+                id="org-name"
+                name="org-name"
+                placeholder="Enter Organization / Company Name"
                 required
               />
             </li>
             <li>
-              <label for="student-name"
-                >Name
+              <label for="org-location"
+                >Location / City of Organization / Company</label
+              >
+              <input
+                type="text"
+                id="org-location"
+                name="org-location"
+                placeholder="Enter Location / City of Organization / Company"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-person-receiving-noc"
+                >Name of Person receiving NOC in Organization / Company for
+                Internship
                 <br />
                 <span class="extra-instructions"
-                  >(Write your official name present on documents. First Letter
-                  of each word should be in CAPITAL)</span
+                  >(If you wanted to send NOC in company by Designation only or
+                  you don't know the name, You can leave this BLANK)</span
                 ></label
               >
               <input
                 type="text"
-                id="student-name"
-                name="student-name"
-                placeholder="Your Name"
-                required
+                id="org-person-receiving-noc"
+                name="org-person-receiving-noc"
+                placeholder="Enter Name of Person receiving NOC in Organization / Company for Internship"
               />
             </li>
             <li>
-              <label for="student-mobile">Mobile Number</label>
-              <input
-                type="tel"
-                id="student-mobile"
-                name="student-mobile"
-                placeholder="Your Mobile Number"
-                maxlength="10"
-                minlength="10"
-                required
-              />
-            </li>
-            <li>
-              <label for="student-father-name">Father's Name</label>
+              <label for="org-designation-person-receiving-noc"
+                >Designation of Person receiving NOC in Organization / Company
+                for Internship</label
+              >
               <input
                 type="text"
-                id="student-father-name"
-                name="student-father-name"
-                placeholder="Your Father's Name"
+                id="org-designation-person-receiving-noc"
+                name="org-designation-person-receiving-noc"
+                placeholder="Enter Designation of Person receiving NOC in Organization / Company for Internship"
                 required
               />
             </li>
             <li>
-              <label for="branch">Branch</label>
-              <select name="branch" id="branch" required>
-                <option value="" disabled selected hidden>
-                  Choose Your Branch
-                </option>
-                <option value="B.Tech - Civil Engineering">
-                  B.Tech - Civil Engineering
-                </option>
-                <option value="B.Tech - Mechanical Engineering">
-                  B.Tech - Mechanical Engineering
-                </option>
-                <option value="B.Tech - Electrical Engineering">
-                  B.Tech - Electrical Engineering
-                </option>
-                <option value="B.Tech - Electronics Engineering">
-                  B.Tech - Electronics Engineering
-                </option>
-                <option value="B.Tech - Computer Science & Engineering">
-                  B.Tech - Computer Science & Engineering
-                </option>
-                <option value="B.Tech - Chemical Engineering">
-                  B.Tech - Chemical Engineering
-                </option>
-                <option value="B.Tech - Information Technology">
-                  B.Tech - Information Technology
-                </option>
-                <option value="B.Tech - Biotechnology">
-                  B.Tech - Biotechnology
-                </option>
-                <option
-                  value="B.Tech - Electronics & Telecommunication Engineering"
-                >
-                  B.Tech - Electronics & Telecommunication Engineering
-                </option>
-                <option value="B.Tech - Automobile Engineering">
-                  B.Tech - Automobile Engineering
-                </option>
-                <option value="MCA">MCA</option>
-                <option value="MBA">MBA</option>
-                <option value="B.Tech- Artificial Intelligence and Robotics">
-                  B.Tech- Artificial Intelligence and Robotics
-                </option>
-                <option value="B.Tech- Mathematics and Computing">
-                  B.Tech- Mathematics and Computing
-                </option>
-                <option
-                  value="B.Tech- Internet of Things (Offered by Electrical Engineering Department)"
-                >
-                  B.Tech- Internet of Things (Offered by Electrical Engineering
-                  Department)
-                </option>
-                <option
-                  value="B.Tech- Internet of Things (IOT) (Offered by Information Technology Department)"
-                >
-                  B.Tech- Internet of Things (IOT) (Offered by Information
-                  Technology Department)
-                </option>
-              </select>
-            </li>
-            <li>
-              <label for="department">Department</label>
-              <select name="department" id="department" required>
-                <option value="" disabled selected hidden>
-                  Choose Your Department
-                </option>
-                <option value="Civil Engineering">Civil Engineering</option>
-                <option value="Mechanical Engineering & Automobile">
-                  Mechanical Engineering & Automobile
-                </option>
-                <option value="Electrical Engineering">
-                  Electrical Engineering
-                </option>
-                <option value="Electronics Engineering & ET">
-                  Electronics Engineering & ET
-                </option>
-                <option value="Computer Science & Engineering & MCA">
-                  Computer Science & Engineering & MCA
-                </option>
-                <option value="Mathematics and Computing">
-                  Mathematics and Computing
-                </option>
-                <option value="Chemical Engineering">
-                  Chemical Engineering
-                </option>
-                <option value="Information Technology">
-                  Information Technology
-                </option>
-                <option value="Biotechnology">Biotechnology</option>
-                <option value="MBA">MBA</option>
-              </select>
-            </li>
-            <li>
-              <label for="year">Year</label>
-              <select name="year" id="year" required>
-                <option value="" disabled selected hidden>Choose Year</option>
-                <option value="II Year Btech">II Year Btech</option>
-                <option value="Pre Final Year B.Tech/ MCA/ MBA">
-                  Pre Final Year B.Tech/ MCA/ MBA
-                </option>
-                <option value="Final Year B.Tech / MCA/ MBA">
-                  Final Year B.Tech / MCA/ MBA
-                </option>
-              </select>
-            </li>
-            <li>
-              <label for="student-current-address">Current Address</label>
-              <input
-                type="text"
-                id="student-current-address"
-                name="student-current-address"
-                placeholder="Your Current Address"
-                required
-              />
-            </li>
-            <li>
-              <label for="student-city">City</label>
-              <input
-                type="text"
-                id="student-city"
-                name="student-city"
-                placeholder="Your City"
-                required
-              />
-            </li>
-            <li>
-              <label for="student-state">State</label>
-              <input
-                type="text"
-                id="student-state"
-                name="student-state"
-                placeholder="Your State"
-                required
-              />
-            </li>
-            <li>
-              <label for="student-pincode">PIN Code</label>
+              <label for="internship-days">Internship days</label>
               <input
                 type="number"
-                id="student-pincode"
-                name="student-pincode"
-                placeholder="Your PIN Code"
-                min="100000"
-                max="999999"
+                id="internship-days"
+                name="internship-days"
+                placeholder="Enter duration of Internship"
                 required
               />
+            </li>
+            <li>
+              <label for="internship-starting-date"
+                >Internship starting date</label
+              >
+              <input
+                type="date"
+                name="internship-starting-date"
+                id="internship-starting-date"
+                required
+              />
+            </li>
+            <li>
+              <label for="internship-end-date">Internship End date</label>
+              <input
+                type="date"
+                id="internship-end-date"
+                name="internship-end-date"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-address"
+                >Full Address of organization where you want to go for
+                Internship</label
+              >
+              <input
+                type="text"
+                id="org-address"
+                name="org-address"
+                placeholder="Enter Full Address of organization where you want to go for Internship"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-website">Organization website</label>
+              <input
+                type="url"
+                id="org-website"
+                name="org-website"
+                placeholder="Enter Organization website"
+                required
+              />
+            </li>
+            <li>
+              <label for="applying-through">Applying through</label>
+              <select name="applying-through" id="applying-through" required>
+                <option value="" disabled selected hidden>Choose</option>
+                <option value="reference">Employee Reference</option>
+                <option value="internet">Internet / Website</option>
+                <option value="other">Other</option>
+              </select>
+            </li>
+            <li>
+              <label for="internship-offer-letter"
+                >Internship Offer Letter or Approval mail from Organization
+                <span class="extra-instructions">(If any)</span></label
+              >
+              <input
+                type="file"
+                name="internship-offer-letter"
+                id="internship-offer-letter"
+              />
+            </li>
+            <li>
+              <label for="self-declaration">Self Declaration</label>
+              <div id="self-declaration-container">
+                <input
+                  type="checkbox"
+                  id="self-declaration"
+                  name="self-declaration"
+                  required
+                />
+                <label for="self-declaration"
+                  >I hereby declare that the information given in this
+                  application is true and correct to the best of my knowledge
+                  and belief. In case any information given in this application
+                  proves to be false or incorrect, I shall be responsible for
+                  the consequences</label
+                >
+              </div>
             </li>
           </ul>
 
           <div id="button-container">
             <button type="reset" class="btn-alt">Clear Form</button>
-            <button type="submit" class="btn">Next</button>
+            <button type="submit" class="btn">Submit</button>
           </div>
         </form>
       </div>

@@ -1,11 +1,5 @@
 @import url("/styles/colors.css");
 
-main {
-  padding: 1rem;
-  color: var(--color-primary-500);
-  font-size: 1rem;
-}
-
 #noc-form-heading {
   text-transform: uppercase;
   font-size: 2rem;
@@ -31,12 +25,12 @@ main {
   font-size: 1rem;
 }
 
-#student-personal-details-form-container {
+#NOC-form-container {
   background-color: var(--color-primary-100);
   padding: 2rem;
   border: 2px solid var(--color-primary-500);
   border-radius: 12px;
-  width: 42rem;
+  width: 60rem;
   margin: 2rem auto;
 }
 
@@ -50,7 +44,7 @@ main {
   margin: 1rem 0;
 }
 
-#name-instructions {
+.extra-instructions {
   margin: 0;
   font-size: 0.75rem;
 }
@@ -70,51 +64,32 @@ select {
   border-radius: 8px;
   border: 1.5px solid var(--color-primary-500);
   margin-bottom: 1rem;
-  width: 40rem;
+  width: 50rem;
   box-sizing: border-box;
 }
 
 label {
   display: block;
   margin: 0.5rem 0;
+  font-weight: bold;
 }
 
 #button-container {
   text-align: right;
 }
 
-.btn {
-  font: inherit;
-  color: var(--color-primary-100);
-  background-color: var(--color-primary-400);
-  border: 2px solid var(--color-primary-400);
-  padding: 0.25rem 1rem;
-  text-transform: uppercase;
-  border-radius: 30px;
-  margin: 0.5rem;
-  font-size: 1.2rem;
+#self-declaration {
+  margin: 1rem;
+  width: auto;
 }
 
-.btn-alt {
-  font: inherit;
-  color: var(--color-primary-400);
-  background-color: var(--color-primary-100);
-  border: 2px solid var(--color-primary-400);
-  padding: 0.25rem 1rem;
-  text-transform: uppercase;
-  border-radius: 30px;
-  margin: 0.5rem;
-  font-size: 1.2rem;
+#self-declaration-container {
+  display: flex;
+  width: 50rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn:hover {
-  color: var(--color-primary-400);
-  background-color: var(--color-primary-100);
-  cursor: pointer;
-}
-
-.btn-alt:hover {
-  color: var(--color-primary-100);
-  background-color: var(--color-primary-400);
-  cursor: pointer;
+#self-declaration-container label {
+  text-align: justify;
 }
