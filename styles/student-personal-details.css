@@ -12,7 +12,22 @@ main {
   text-align: center;
 }
 
-#instructions-heading {
+#instructions {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--color-primary-100);
+  border: 2px solid var(--color-primary-500);
+  border-radius: 12px;
+}
+
+#instructions-main-heading {
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+#instructions-sub-heading {
   font-size: 1rem;
 }
 
@@ -23,6 +38,16 @@ main {
   border-radius: 12px;
   width: 42rem;
   margin: 2rem auto;
+}
+
+#input-fields-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 #name-instructions {
@@ -45,7 +70,7 @@ select {
   border-radius: 8px;
   border: 1.5px solid var(--color-primary-500);
   margin-bottom: 1rem;
-  width: 37rem;
+  width: 40rem;
   box-sizing: border-box;
 }
 
