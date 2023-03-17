@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head") %>
+    
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="/styles/noc-form.css" />
+  </head>
+  <body>
+    <header>
+      <%- include("includes/main-header") %> 
+      <%- include("includes/nav-header") %>
+    </header>
+
+    <main>
+      <h3 id="noc-form-heading">
+        Student Internship Request form for
+        <strong>No Objection Certificate (NOC)</strong>
+      </h3>
+
+      <div id="instructions">
+        <h4 id="instructions-main-heading">Instructions</h4>
+
+        <h5 id="instructions-sub-heading">
+          Do read all instruction carefully mentioned below
+        </h5>
+
+        <div>
+          <p>
+            Dear Students,
+            <br />
+            All the students, whoever is going for any Internship / Project /
+            Training in any Organization, are required to take
+            <strong> NO OBJECTION CERTFICATE (NOC) </strong>
+            for the same.
+            <br />
+            <br />
+            Do follow the procedure of applying online:-
+            <br />
+          </p>
+
+          <ol>
+            <li>
+              Take care of information you are providing in the online form
+              which will be printed as it is in the NOC for Internship/Training.
+            </li>
+            <li>
+              <strong>Very Important:</strong>
+              Do confirm and write carefully the Name, Designation and Company
+              Name & Address in the form to whom you are sending letter/NOC in
+              that company/organization. It will be printed as it is. If you do
+              mistake in writing spelling of any name, designation or company
+              name, it will not be accepted any where. Even a minor mistake of
+              Comma (,) will not be considered.
+            </li>
+            <li>
+              You will receive NOC via Email through T&P Cell. It will be an
+              automatically generated letter/NOC with date and reference number
+              after approval of your Faculty Coordinator/Internship Coordinator
+              of your Department and then from T&P Cell. For further proofs you
+              can directly take the print of email with all details and live
+              link of NOC at our drive if any further proof is required by any
+              organization.
+            </li>
+          </ol>
+
+          <p>
+            <strong
+              >IMPORTANT NOTE: Do Read each and every instruction given in the
+              Online Form and below each field</strong
+            >
+            <br />
+            <br />
+            For any query: You may contact to your Faculty Coordinator.
+          </p>
+        </div>
+      </div>
+
+      <div id="NOC-form-container">
+        <h4 id="noc-form-sub-heading">
+          Organization details in which you are applying for Internship
+        </h4>
+
+        <form action="/organization-details.html" method="GET">
+          <ul id="input-fields-list">
+            <li>
+              <label for="org-name">Organization / Company Name</label>
+              <input
+                type="text"
+                id="org-name"
+                name="org-name"
+                placeholder="Enter Organization / Company Name"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-location"
+                >Location / City of Organization / Company</label
+              >
+              <input
+                type="text"
+                id="org-location"
+                name="org-location"
+                placeholder="Enter Location / City of Organization / Company"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-person-receiving-noc"
+                >Name of Person receiving NOC in Organization / Company for
+                Internship
+                <br />
+                <span class="extra-instructions"
+                  >(If you wanted to send NOC in company by Designation only or
+                  you don't know the name, You can leave this BLANK)</span
+                ></label
+              >
+              <input
+                type="text"
+                id="org-person-receiving-noc"
+                name="org-person-receiving-noc"
+                placeholder="Enter Name of Person receiving NOC in Organization / Company for Internship"
+              />
+            </li>
+            <li>
+              <label for="org-designation-person-receiving-noc"
+                >Designation of Person receiving NOC in Organization / Company
+                for Internship</label
+              >
+              <input
+                type="text"
+                id="org-designation-person-receiving-noc"
+                name="org-designation-person-receiving-noc"
+                placeholder="Enter Designation of Person receiving NOC in Organization / Company for Internship"
+                required
+              />
+            </li>
+            <li>
+              <label for="internship-days">Internship days</label>
+              <input
+                type="number"
+                id="internship-days"
+                name="internship-days"
+                placeholder="Enter duration of Internship"
+                required
+              />
+            </li>
+            <li>
+              <label for="internship-starting-date"
+                >Internship starting date</label
+              >
+              <input
+                type="date"
+                name="internship-starting-date"
+                id="internship-starting-date"
+                required
+              />
+            </li>
+            <li>
+              <label for="internship-end-date">Internship End date</label>
+              <input
+                type="date"
+                id="internship-end-date"
+                name="internship-end-date"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-address"
+                >Full Address of organization where you want to go for
+                Internship</label
+              >
+              <input
+                type="text"
+                id="org-address"
+                name="org-address"
+                placeholder="Enter Full Address of organization where you want to go for Internship"
+                required
+              />
+            </li>
+            <li>
+              <label for="org-website">Organization website</label>
+              <input
+                type="url"
+                id="org-website"
+                name="org-website"
+                placeholder="Enter Organization website"
+                required
+              />
+            </li>
+            <li>
+              <label for="applying-through">Applying through</label>
+              <select name="applying-through" id="applying-through" required>
+                <option value="" disabled selected hidden>Choose</option>
+                <option value="reference">Employee Reference</option>
+                <option value="internet">Internet / Website</option>
+                <option value="other">Other</option>
+              </select>
+            </li>
+            <li>
+              <label for="internship-offer-letter"
+                >Internship Offer Letter or Approval mail from Organization
+                <span class="extra-instructions">(If any)</span></label
+              >
+              <input
+                type="file"
+                name="internship-offer-letter"
+                id="internship-offer-letter"
+              />
+            </li>
+            <li>
+              <label for="self-declaration">Self Declaration</label>
+              <div id="self-declaration-container">
+                <input
+                  type="checkbox"
+                  id="self-declaration"
+                  name="self-declaration"
+                  required
+                />
+                <label for="self-declaration"
+                  >I hereby declare that the information given in this
+                  application is true and correct to the best of my knowledge
+                  and belief. In case any information given in this application
+                  proves to be false or incorrect, I shall be responsible for
+                  the consequences</label
+                >
+              </div>
+            </li>
+          </ul>
+
+          <div id="button-container">
+            <button type="reset" class="btn-alt">Clear Form</button>
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <%- include("includes/footer") %>
+    </footer>
+  </body>
+</html>
