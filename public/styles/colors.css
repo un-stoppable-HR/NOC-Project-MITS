@@ -5,4 +5,11 @@
   --color-primary-300: rgb(158, 120, 97);
   --color-primary-400: rgb(95, 72, 58);
   --color-primary-500: rgb(32, 24, 19);
+
+  --color-status-approved-bg: rgb(162, 240, 181);
+  --color-status-approved-text: rgb(2, 91, 30);
+  --color-status-pending-bg: rgb(248, 221, 167);
+  --color-status-pending-text: rgb(111, 82, 22);
+  --color-status-rejected-bg: rgb(254, 193, 207);
+  --color-status-rejected-text: rgb(179, 0, 33);
 }

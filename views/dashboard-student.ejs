@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head") %>
+
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="/styles/dashboard.css" />
+  </head>
+
+  <body>
+    <header>
+      <%- include("includes/main-header") %> 
+      <%- include("includes/nav-header") %>
+    </header>
+
+    <main>
+      <section class="table_container">
+        <section class="table_header">
+          <h1>NOC - Status</h1>
+        </section>
+        <section class="table_body">
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Company Name</th>
+                <th>Company Location</th>
+                <th>Status</th>
+                <th>Internship days</th>
+                <th>Internship starting date</th>
+                <th>Internship End date</th>
+                <th>More Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 1; i <= 50; i += 3) { %>
+              <tr>
+                <td><%= i %></td>
+                <td>Google</td>
+                <td>Remote</td>
+                <td><p class="status approved">Approved</p></td>
+                <td>60</td>
+                <td>15 May, 2023</td>
+                <td>14 July, 2023</td>
+                <td><button class="btn">View</button></td>
+              </tr>
+              <tr>
+                <td><%= i + 1 %></td>
+                <td>Google</td>
+                <td>Remote</td>
+                <td><p class="status pending">Pending</p></td>
+                <td>60</td>
+                <td>15 May, 2023</td>
+                <td>14 July, 2023</td>
+                <td><button class="btn">View</button></td>
+              </tr>
+              <tr>
+                <td><%= i + 2 %></td>
+                <td>Google</td>
+                <td>Remote</td>
+                <td><p class="status rejected">Rejected</p></td>
+                <td>60</td>
+                <td>15 May, 2023</td>
+                <td>14 July, 2023</td>
+                <td><button class="btn">View</button></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <%- include("includes/footer") %>
+    </footer>
+  </body>
+</html>
