@@ -1,12 +1,16 @@
 @import url("/styles/colors.css");
 
-#noc-form-heading {
+.NOC-form-parent-container li {
+  width: 100%;
+}
+
+.noc-form-heading {
   text-transform: uppercase;
   font-size: 2rem;
   text-align: center;
 }
 
-#instructions {
+.instructions {
   margin: 1rem;
   padding: 1rem;
   background-color: var(--color-primary-100);
@@ -14,27 +18,35 @@
   border-radius: 12px;
 }
 
-#instructions-main-heading {
+.instructions-main-heading {
   text-align: center;
   font-size: 1.75rem;
   margin: 0.5rem 0;
   text-transform: uppercase;
 }
 
-#instructions-sub-heading {
+.instructions-sub-heading {
   font-size: 1rem;
 }
 
-#NOC-form-container {
+.NOC-form-parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NOC-form-container {
   background-color: var(--color-primary-100);
   padding: 2rem;
   border: 2px solid var(--color-primary-500);
   border-radius: 12px;
-  width: 60rem;
-  margin: 2rem auto;
 }
 
-#input-fields-list {
+.NOC-form-container-org {
+  width: 70%;
+}
+
+.input-fields-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -49,7 +61,7 @@
   font-size: 0.75rem;
 }
 
-#noc-form-sub-heading {
+.noc-form-sub-heading {
   text-transform: uppercase;
   font-size: 1.75rem;
   margin: 0 0 1rem 0;
@@ -64,7 +76,7 @@ select {
   border-radius: 8px;
   border: 1.5px solid var(--color-primary-500);
   margin-bottom: 1rem;
-  width: 50rem;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -74,7 +86,7 @@ label {
   font-weight: bold;
 }
 
-#button-container {
+.button-container {
   text-align: right;
 }
 
@@ -85,11 +97,22 @@ label {
 
 #self-declaration-container {
   display: flex;
-  width: 50rem;
   align-items: center;
   justify-content: center;
 }
 
 #self-declaration-container label {
   text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .NOC-form-container-org {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .NOC-form-container-org {
+    width: 85%;
+  }
 }
