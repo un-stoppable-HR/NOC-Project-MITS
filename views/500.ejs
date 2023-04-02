@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head", { title: 'Something went wrong!' }) %>
+
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="/styles/error.css" />
+  </head>
+
+  <body>
+    <header>
+      <%- include("includes/main-header") %> 
+      <%- include("includes/nav-header") %>
+    </header>
+
+    <main>
+      <section class="error_container">
+        <h1>Oops, something went wrong!</h1>
+        <p>
+          Unfortunately, something went wrong on our end - we're working on fixing
+          it!
+        </p>
+        <form action="/">
+          <button class="btn">Back To Safety!</button>
+        </form>
+      </section>
+    </main>
+
+    <footer><%- include("includes/footer") %></footer>
+  </body>
+</html>

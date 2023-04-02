@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.error_container {
+  background-color: var(--color-primary-100);
+  border: 2px solid var(--color-primary-500);
+  border-radius: 12px;
+  text-align: center;
+  padding: 2rem;
+}
