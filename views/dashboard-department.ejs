@@ -13,32 +13,43 @@
       <%- include("includes/nav-header") %>
     </header>
 
-    <main>      
-      <section class="student-details-parent-container">
-        <section class="student-details-container">
-          <section class="student-details-heading">
-            <h1>Student's Details</h1>
-          </section>
-          <section class="student-details-body">
-            <table>
-              <tbody>
-                <tr>
-                  <td><b>NAME - </b><span>STUDENT'S NAME</span></td>
-                </tr>
-                <tr>
-                  <td><b>ENROLLMENT NO. - </b><span>STUDENT'S ENROLLMENT NO.</span></td>
-                </tr>
-                <tr>
-                  <td><b>BRANCH - </b><span>STUDENT'S BRANCH</span></td>
-                </tr>
-                <tr>
-                  <td><b>DEPARTMENT - </b><span>STUDENT'S DEPARTMENT</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+    <main>
+        <section class="heading">
+            <h1>NOC - STATISTICS</h1>
         </section>
-      </section>
+
+      <ol class="noc-stats">
+        <li>
+            <section class="noc-stats-details-container">
+              <section class="noc-stats-details-heading">
+                <h1>Approved NOC's</h1>
+              </section>
+              <section class="noc-stats-details-body">
+                <p>10</p>
+              </section>
+            </section>
+        </li>
+        <li>
+            <section class="noc-stats-details-container">
+              <section class="noc-stats-details-heading">
+                <h1>Pending NOC's</h1>
+              </section>
+              <section class="noc-stats-details-body">
+                <p>10</p>
+              </section>
+            </section>
+        </li>
+        <li>
+            <section class="noc-stats-details-container">
+              <section class="noc-stats-details-heading">
+                <h1>Rejected NOC's</h1>
+              </section>
+              <section class="noc-stats-details-body">
+                <p>10</p>
+              </section>
+            </section>
+        </li>
+      </ol>
 
       <section class="table_parent_container">
         <section class="table_container">
@@ -99,8 +110,6 @@
       </section>
     </main>
 
-    <footer>
-      <%- include("includes/footer") %>
-    </footer>
+    <footer><%- include("includes/footer") %></footer>
   </body>
 </html>
