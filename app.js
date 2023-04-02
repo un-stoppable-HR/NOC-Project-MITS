@@ -2,31 +2,33 @@ const path = require("path");
 
 const express = require("express");
 
+const baseRoutes = require("./routes/base-routes");
+const studentRoutes = require("./routes/student-routes");
+const departmentRoutes = require("./routes/department-routes");
+const tnpRoutes = require("./routes/tnp-routes");
+
 const app = express();
 
-app.use(express.static(path.join(__dirname, "public")));
-
-app.set("views", path.join(__dirname, "views"));
+// Activate EJS view engine
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-app.get("/dashboard-student", function (req, res) {
-  res.render("dashboard-student");
-});
+// Parse incoming request bodies
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/student-personal-details", function (req, res) {
-  res.render("student-personal-details");
-});
+// Serve static files (e.g. CSS files)
+app.use(express.static("public"));
 
-app.get("/organization-details", function (req, res) {
-  res.render("organization-details");
-});
+app.use(baseRoutes);
+app.use(studentRoutes);
+app.use(departmentRoutes);
+app.use(tnpRoutes);
 
-app.get("/forgot-password", function (req, res) {
-  res.render("forgot-password");
-});
-
-app.get("/login", function (req, res) {
-  res.render("login");
+app.use(function (error, req, res, next) {
+  // Default error handling function
+  // Will become active whenever any route / middleware crashes
+  console.log(error);
+  res.status(500).render("500");
 });
 
 app.listen(3000);
