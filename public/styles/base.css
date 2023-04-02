@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-primary-150);
+  background-color: var(--color-primary-100);
 }
 
 #main-header a {

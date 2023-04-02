@@ -9,6 +9,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.get("/dashboard-student", function (req, res) {
+  res.render("dashboard-student");
+});
+
 app.get("/student-personal-details", function (req, res) {
   res.render("student-personal-details");
 });
