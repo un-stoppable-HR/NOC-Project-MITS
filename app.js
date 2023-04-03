@@ -1,5 +1,5 @@
 const path = require("path");
-
+const port = 3000;
 const express = require("express");
 
 const baseRoutes = require("./routes/base-routes");
@@ -31,4 +31,7 @@ app.use(function (error, req, res, next) {
   res.status(500).render("500");
 });
 
-app.listen(3000);
+
+app.listen(port,()=>{
+  console.log(`app listing on port http://localhost:${port}`);
+});
