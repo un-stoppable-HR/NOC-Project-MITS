@@ -1,33 +1,55 @@
 <!-- nav-header -->
 <nav>
-  <ul>
+  <ul class="nav-menu1">
     <li>
-      <a href=""
+      <a  class="nav-link1" href=""
         ><span class="material-symbols-outlined"> dashboard </span>Dashboard</a
       >
     </li>
     <li>
-      <a href=""
+      <a  class="nav-link1" href=""
         ><span class="material-symbols-outlined"> description </span>Apply for
         NOC</a
       >
     </li>
     <li>
-      <a href=""
+      <a class="nav-link1" href=""
         ><span class="material-symbols-outlined"> account_circle </span
         >Profile</a
       >
     </li>
     <li>
-      <a href=""
+      <a class="nav-link1"  href=""
         ><span class="material-symbols-outlined"> password </span>Change
         Password</a
       >
     </li>
     <li>
-      <a href=""
+      <a class="nav-link1" href=""
         ><span class="material-symbols-outlined"> logout </span>Logout</a
       >
     </li>
-  </ul>
+  </ul> 
+  <div class="hamburger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+
 </nav>
+
+<script>
+  const hamb = document.querySelector(".hamburger");
+                const navmenu = document.querySelector(".nav-menu1");
+          
+                hamb.addEventListener("click", () => {
+                  hamb.classList.toggle("active");
+                  navmenu.classList.toggle("active");
+                });
+                document.querySelectorAll(".nav-link1").forEach((n) =>
+                  n.addEventListener("click", () => {
+                    hamb.classList.remove("active");
+                    navmenu.classList.remove("active");
+                  })
+                );
+</script>

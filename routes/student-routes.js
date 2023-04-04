@@ -8,6 +8,10 @@ router.get("/dashboard-student", function (req, res) {
   res.render("dashboard-student");
 });
 
+router.get("/more-details", function (req, res) {
+  res.render("more-details");
+});
+
 router.get("/student-personal-details", function (req, res) {
   res.render("student-personal-details");
 });
