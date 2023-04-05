@@ -12,6 +12,10 @@ router.get("/login", function (req, res) {
   res.render("login");
 });
 
+router.get("/signup", function (req, res) {
+  res.render("signup");
+});
+
 router.get("/forgot-password", function (req, res) {
   res.render("forgot-password");
 });

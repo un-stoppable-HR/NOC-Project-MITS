@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <%- include("includes/head", { title: 'Login' }) %>
+    <%- include("includes/head", { title: 'Signup' }) %>
 
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="./styles/login.css" />
@@ -16,23 +16,22 @@
       <!--login container start -->
       <div class="login-container">
         <div class="form-box">
-          <h2>Login Here</h2>
+          <h2>Signup Here</h2>
           <form class="login">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="username" id="email" name="email" />
             </div>
             <div class="form-group">
+              <label for="confirmEmail">Confirm Email</label>
+              <input type="email" class="username" id="confirmEmail" name="confirmEmail" />
+            </div>
+            <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="password" id="password" name="password" />
             </div>
-            <button type="submit" class="btn">Login &#x2794;</button>
-            <a href="/forgot-password" class="btn-alt">Forgot Password?</a>
+            <button type="submit" class="btn">Signup &#x2794;</button>
           </form>
-          <h4>OR</h4>
-          <div class="google-login">
-            <button><img src="./images/g.png" />Login With Google</button>
-          </div>
         </div>
       </div>
     </main>
