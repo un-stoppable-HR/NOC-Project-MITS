@@ -1,15 +1,36 @@
 <!-- nav-header -->
 <nav>
   <ul class="nav-menu1">
+    <% if (!locals.isAuth) { %>
     <li>
-      <a  class="nav-link1" href=""
-        ><span class="material-symbols-outlined"> dashboard </span>Dashboard</a
+      <a class="nav-link1" href="/signup"
+        ><span class="material-symbols-outlined"> how_to_reg </span>Signup</a
       >
     </li>
     <li>
-      <a  class="nav-link1" href=""
+      <a class="nav-link1" href="/login"
+        ><span class="material-symbols-outlined"> login </span>Login</a
+      >
+    </li>
+    <% } %> 
+    <% if (locals.isAuth) { %>
+    <li>
+      <a class="nav-link1" href="/dashboard-<%= locals.role %>"
+        ><span class="material-symbols-outlined"> dashboard </span>Dashboard</a
+      >
+    </li>
+    <% if (locals.role === "student") { %>
+    <li>
+      <a class="nav-link1" href="/student-personal-details"
         ><span class="material-symbols-outlined"> description </span>Apply for
         NOC</a
+      >
+    </li>
+    <% } %>
+    <li>
+      <a class="nav-link1" href="/forgot-password"
+        ><span class="material-symbols-outlined"> password </span>Change
+        Password</a
       >
     </li>
     <li>
@@ -19,37 +40,33 @@
       >
     </li>
     <li>
-      <a class="nav-link1"  href=""
-        ><span class="material-symbols-outlined"> password </span>Change
-        Password</a
-      >
+      <form action="/logout" method="POST">
+        <button class="btn-nav nav-link1">
+          <span class="material-symbols-outlined"> logout </span>Logout
+        </button>
+      </form>
     </li>
-    <li>
-      <a class="nav-link1" href=""
-        ><span class="material-symbols-outlined"> logout </span>Logout</a
-      >
-    </li>
-  </ul> 
+    <% } %>
+  </ul>
   <div class="hamburger">
     <span class="line"></span>
     <span class="line"></span>
     <span class="line"></span>
   </div>
-
 </nav>
 
 <script>
   const hamb = document.querySelector(".hamburger");
-                const navmenu = document.querySelector(".nav-menu1");
-          
-                hamb.addEventListener("click", () => {
-                  hamb.classList.toggle("active");
-                  navmenu.classList.toggle("active");
-                });
-                document.querySelectorAll(".nav-link1").forEach((n) =>
-                  n.addEventListener("click", () => {
-                    hamb.classList.remove("active");
-                    navmenu.classList.remove("active");
-                  })
-                );
+  const navmenu = document.querySelector(".nav-menu1");
+
+  hamb.addEventListener("click", () => {
+    hamb.classList.toggle("active");
+    navmenu.classList.toggle("active");
+  });
+  document.querySelectorAll(".nav-link1").forEach((n) =>
+    n.addEventListener("click", () => {
+      hamb.classList.remove("active");
+      navmenu.classList.remove("active");
+    })
+  );
 </script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head", { title: 'Error!' }) %>
+
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="/styles/error.css" />
+  </head>
+
+  <body>
+    <header>
+      <%- include("includes/main-header") %> 
+      <%- include("includes/nav-header") %>
+    </header>
+
+    <main>
+      <section class="error_container">
+        <h1>Not Authenticated!</h1>
+        <p>You are not authenticated and therefore not allowed to access this page!</p>
+      </section>
+    </main>
+
+    <footer><%- include("includes/footer") %></footer>
+  </body>
+</html>
