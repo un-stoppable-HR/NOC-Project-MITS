@@ -17,18 +17,21 @@
       <div class="login-container">
         <div class="form-box">
           <h2>Signup Here</h2>
-          <form class="login">
+          <% if (inputData.hasError) { %>
+            <p id="input-error"><%= inputData.message %></p>
+          <% } %>
+          <form class="login" action="/signup" method="POST">
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="username" id="email" name="email" />
+              <input type="email" class="username" id="email" name="email" value="<%= inputData.email %>" required />
             </div>
             <div class="form-group">
               <label for="confirmEmail">Confirm Email</label>
-              <input type="email" class="username" id="confirmEmail" name="confirmEmail" />
+              <input type="email" class="username" id="confirmEmail" name="confirmEmail" value="<%= inputData.confirmEmail %>" required />
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="password" id="password" name="password" />
+              <input type="password" class="password" id="password" name="password" value="<%= inputData.password %>" required />
             </div>
             <button type="submit" class="btn">Signup &#x2794;</button>
           </form>

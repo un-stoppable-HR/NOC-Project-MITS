@@ -165,6 +165,14 @@ main {
   text-decoration: underline;
 }
 
+#input-error {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: rgb(251, 217, 217);
+  color: rgb(144, 33, 33);
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 60%;

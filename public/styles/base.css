@@ -161,6 +161,23 @@ footer span {
   font-size: 1.2rem;
 }
 
+.btn-nav {  
+  font: inherit;
+  color: var(--color-primary-100);
+  background-color: var(--color-primary-400);
+  padding: 0.5rem 0.75rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.btn-nav:hover {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-500);
+  cursor: pointer;
+}
+
 .btn:hover {
   color: var(--color-primary-400);
   background-color: var(--color-primary-100);
