@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include("includes/head", { title: 'NOC Application Form' }) %>
-    
+
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="/styles/noc-form.css" />
   </head>
@@ -14,117 +14,54 @@
     </header>
 
     <main>
-      <h3 class="noc-form-heading">
-        Student Internship Request form for
-        <strong>No Objection Certificate (NOC)</strong>
-      </h3>
-
-      <div class="instructions">
-        <h4 class="instructions-main-heading">Instructions</h4>
-
-        <h5 class="instructions-sub-heading">
-          Do read all instruction carefully mentioned below
-        </h5>
-
-        <div>
-          <p>
-            Dear Students,
-            <br />
-            All the students, whoever is going for any Internship / Project /
-            Training in any Organization, are required to take
-            <strong> NO OBJECTION CERTFICATE (NOC) </strong>
-            for the same.
-            <br />
-            <br />
-            Do follow the procedure of applying online:-
-            <br />
-          </p>
-
-          <ol>
-            <li>
-              Take care of information you are providing in the online form
-              which will be printed as it is in the NOC for Internship/Training.
-            </li>
-            <li>
-              <strong>Very Important:</strong>
-              Do confirm and write carefully the Name, Designation and Company
-              Name & Address in the form to whom you are sending letter/NOC in
-              that company/organization. It will be printed as it is. If you do
-              mistake in writing spelling of any name, designation or company
-              name, it will not be accepted any where. Even a minor mistake of
-              Comma (,) will not be considered.
-            </li>
-            <li>
-              You will receive NOC via Email through T&P Cell. It will be an
-              automatically generated letter/NOC with date and reference number
-              after approval of your Faculty Coordinator/Internship Coordinator
-              of your Department and then from T&P Cell. For further proofs you
-              can directly take the print of email with all details and live
-              link of NOC at our drive if any further proof is required by any
-              organization.
-            </li>
-          </ol>
-
-          <p>
-            <strong
-              >IMPORTANT NOTE: Do Read each and every instruction given in the
-              Online Form and below each field</strong
-            >
-            <br />
-            <br />
-            For any query: You may contact to your Faculty Coordinator.
-          </p>
-        </div>
-      </div>
-
       <section class="NOC-form-parent-container">
         <div class="NOC-form-container">
           <h4 class="noc-form-sub-heading">Student's personal details</h4>
-          <form action="/organization-details.html" method="GET">
+          <form action="/student-personal-details" method="POST">
             <ul class="input-fields-list">
               <li>
-                <label for="student-email">Email</label>
+                <label for="studentEmail">Email</label>
                 <input
                   type="email"
-                  id="student-email"
-                  name="student-email"
+                  id="studentEmail"
+                  name="studentEmail"
                   placeholder="Your Email"
                   required
                 />
               </li>
               <li>
-                <label for="student-enrollment-no">Enrollment Number</label>
+                <label for="studentEnrollmentNo">Enrollment Number</label>
                 <input
                   type="text"
-                  id="student-enrollment-no"
-                  name="student-enrollment-no"
+                  id="studentEnrollmentNo"
+                  name="studentEnrollmentNo"
                   placeholder="Your Enrollment Number"
                   required
                 />
               </li>
               <li>
-                <label for="student-name"
+                <label for="studentName"
                   >Name
                   <br />
                   <span class="extra-instructions"
-                    >(Write your official name present on documents. First Letter
-                    of each word should be in CAPITAL)</span
+                    >(Write your official name present on documents. First
+                    Letter of each word should be in CAPITAL)</span
                   ></label
                 >
                 <input
                   type="text"
-                  id="student-name"
-                  name="student-name"
+                  id="studentName"
+                  name="studentName"
                   placeholder="Your Name"
                   required
                 />
               </li>
               <li>
-                <label for="student-mobile">Mobile Number</label>
+                <label for="studentMobile">Mobile Number</label>
                 <input
                   type="tel"
-                  id="student-mobile"
-                  name="student-mobile"
+                  id="studentMobile"
+                  name="studentMobile"
                   placeholder="Your Mobile Number"
                   maxlength="10"
                   minlength="10"
@@ -132,11 +69,11 @@
                 />
               </li>
               <li>
-                <label for="student-father-name">Father's Name</label>
+                <label for="studentFatherName">Father's Name</label>
                 <input
                   type="text"
-                  id="student-father-name"
-                  name="student-father-name"
+                  id="studentFatherName"
+                  name="studentFatherName"
                   placeholder="Your Father's Name"
                   required
                 />
@@ -147,58 +84,34 @@
                   <option value="" disabled selected hidden>
                     Choose Your Branch
                   </option>
-                  <option value="B.Tech - Civil Engineering">
-                    B.Tech - Civil Engineering
-                  </option>
-                  <option value="B.Tech - Mechanical Engineering">
-                    B.Tech - Mechanical Engineering
-                  </option>
-                  <option value="B.Tech - Electrical Engineering">
-                    B.Tech - Electrical Engineering
-                  </option>
-                  <option value="B.Tech - Electronics Engineering">
-                    B.Tech - Electronics Engineering
-                  </option>
-                  <option value="B.Tech - Computer Science & Engineering">
+                  <option value="1">B.Tech - Civil Engineering</option>
+                  <option value="2">B.Tech - Mechanical Engineering</option>
+                  <option value="3">B.Tech - Electrical Engineering</option>
+                  <option value="4">B.Tech - Electronics Engineering</option>
+                  <option value="5">
                     B.Tech - Computer Science & Engineering
                   </option>
-                  <option value="B.Tech - Chemical Engineering">
-                    B.Tech - Chemical Engineering
-                  </option>
-                  <option value="B.Tech - Information Technology">
-                    B.Tech - Information Technology
-                  </option>
-                  <option value="B.Tech - Biotechnology">
-                    B.Tech - Biotechnology
-                  </option>
-                  <option
-                    value="B.Tech - Electronics & Telecommunication Engineering"
-                  >
+                  <option value="6">B.Tech - Mathematics and Computing</option>
+                  <option value="7">B.Tech - Chemical Engineering</option>
+                  <option value="8">B.Tech - Information Technology</option>
+                  <option value="9">B.Tech - Biotechnology</option>
+                  <option value="11">
                     B.Tech - Electronics & Telecommunication Engineering
                   </option>
-                  <option value="B.Tech - Automobile Engineering">
-                    B.Tech - Automobile Engineering
+                  <option value="12">B.Tech - Automobile Engineering</option>
+                  <option value="14">
+                    B.Tech - Artificial Intelligence and Robotics
                   </option>
-                  <option value="MCA">MCA</option>
-                  <option value="MBA">MBA</option>
-                  <option value="B.Tech- Artificial Intelligence and Robotics">
-                    B.Tech- Artificial Intelligence and Robotics
+                  <option value="15">
+                    B.Tech - Internet of Things (Offered by Electrical
+                    Engineering Department)
                   </option>
-                  <option value="B.Tech- Mathematics and Computing">
-                    B.Tech- Mathematics and Computing
-                  </option>
-                  <option
-                    value="B.Tech- Internet of Things (Offered by Electrical Engineering Department)"
-                  >
-                    B.Tech- Internet of Things (Offered by Electrical Engineering
-                    Department)
-                  </option>
-                  <option
-                    value="B.Tech- Internet of Things (IOT) (Offered by Information Technology Department)"
-                  >
-                    B.Tech- Internet of Things (IOT) (Offered by Information
+                  <option value="16">
+                    B.Tech - Internet of Things (IOT) (Offered by Information
                     Technology Department)
                   </option>
+                  <option value="10">MBA</option>
+                  <option value="13">MCA</option>
                 </select>
               </li>
               <li>
@@ -207,81 +120,72 @@
                   <option value="" disabled selected hidden>
                     Choose Your Department
                   </option>
-                  <option value="Civil Engineering">Civil Engineering</option>
-                  <option value="Mechanical Engineering & Automobile">
-                    Mechanical Engineering & Automobile
-                  </option>
-                  <option value="Electrical Engineering">
-                    Electrical Engineering
-                  </option>
-                  <option value="Electronics Engineering & ET">
-                    Electronics Engineering & ET
-                  </option>
-                  <option value="Computer Science & Engineering & MCA">
+                  <option value="1">Civil Engineering</option>
+                  <option value="2">Mechanical Engineering & Automobile</option>
+                  <option value="3">Electrical Engineering</option>
+                  <option value="4">Electronics Engineering & ET</option>
+                  <option value="5">
                     Computer Science & Engineering & MCA
                   </option>
-                  <option value="Mathematics and Computing">
-                    Mathematics and Computing
-                  </option>
-                  <option value="Chemical Engineering">
-                    Chemical Engineering
-                  </option>
-                  <option value="Information Technology">
-                    Information Technology
-                  </option>
-                  <option value="Biotechnology">Biotechnology</option>
-                  <option value="MBA">MBA</option>
+                  <option value="6">Mathematics and Computing</option>
+                  <option value="7">Chemical Engineering</option>
+                  <option value="8">Information Technology</option>
+                  <option value="9">Biotechnology</option>
+                  <option value="10">MBA</option>
                 </select>
               </li>
               <li>
-                <label for="year">Year</label>
-                <select name="year" id="year" required>
-                  <option value="" disabled selected hidden>Choose Year</option>
-                  <option value="II Year Btech">II Year Btech</option>
-                  <option value="Pre Final Year B.Tech/ MCA/ MBA">
-                    Pre Final Year B.Tech/ MCA/ MBA
+                <label for="semester">Semester</label>
+                <select name="semester" id="semester" required>
+                  <option value="" disabled selected hidden>
+                    Choose Semester
                   </option>
-                  <option value="Final Year B.Tech / MCA/ MBA">
-                    Final Year B.Tech / MCA/ MBA
-                  </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
                 </select>
               </li>
               <li>
-                <label for="student-current-address">Current Address</label>
+                <label for="studentCurrentAddress">Current Address</label>
                 <input
                   type="text"
-                  id="student-current-address"
-                  name="student-current-address"
+                  id="studentCurrentAddress"
+                  name="studentCurrentAddress"
                   placeholder="Your Current Address"
                   required
                 />
               </li>
               <li>
-                <label for="student-city">City</label>
+                <label for="studentCity">City</label>
                 <input
                   type="text"
-                  id="student-city"
-                  name="student-city"
+                  id="studentCity"
+                  name="studentCity"
                   placeholder="Your City"
                   required
                 />
               </li>
               <li>
-                <label for="student-state">State</label>
+                <label for="studentState">State</label>
                 <input
                   type="text"
-                  id="student-state"
-                  name="student-state"
+                  id="studentState"
+                  name="studentState"
                   placeholder="Your State"
                   required
                 />
               </li>
               <li>
-                <label for="student-pincode">PIN Code</label>
+                <label for="studentPincode">PIN Code</label>
                 <input
                   type="number"
-                  id="student-pincode"
-                  name="student-pincode"
+                  id="studentPincode"
+                  name="studentPincode"
                   placeholder="Your PIN Code"
                   min="100000"
                   max="999999"
@@ -289,7 +193,7 @@
                 />
               </li>
             </ul>
-  
+
             <div class="button-container">
               <button type="reset" class="btn-alt">Clear Form</button>
               <button type="submit" class="btn">Next</button>

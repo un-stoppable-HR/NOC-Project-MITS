@@ -57,13 +57,28 @@ app.use(async function (req, res, next) {
     return next();
   }
 
-  const query = `
+  const query1 = `
     SELECT role
     FROM users
     WHERE user_id = ?
   `;
 
-  const [role] = await db.query(query, [user.id]);
+  const [role] = await db.query(query1, [user.id]);
+
+  const query2 = `
+    SELECT students.*, users.email
+    FROM students
+    INNER JOIN users ON students.user_id = users.user_id
+    WHERE students.user_id = ?
+  `;
+
+  const [students] = await db.query(query2, [user.id]);
+
+  if (!students[0]) {
+    res.locals.isRegisteredStudent = false;
+  } else {
+    res.locals.isRegisteredStudent = true;
+  }
 
   res.locals.isAuth = isAuth;
   res.locals.role = role[0].role;
