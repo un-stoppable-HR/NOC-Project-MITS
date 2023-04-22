@@ -20,18 +20,6 @@ router.get("/dashboard-student", function (req, res) {
   res.render("dashboard-student");
 });
 
-router.get("/more-details", function (req, res) {
-  if (!res.locals.isAuth) {
-    return res.status(401).render("401");
-  }
-
-  if (res.locals.role !== "student") {
-    return res.status(403).render("403");
-  }
-
-  res.render("more-details");
-});
-
 router.get("/student-personal-details", function (req, res) {
   if (!res.locals.isAuth) {
     return res.status(401).render("401");

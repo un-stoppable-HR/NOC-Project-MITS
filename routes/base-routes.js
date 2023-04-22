@@ -60,6 +60,14 @@ router.get("/forgot-password", function (req, res) {
   res.render("forgot-password");
 });
 
+router.get("/more-details", function (req, res) {
+  if (!res.locals.isAuth) {
+    return res.status(401).render("401");
+  }
+
+  res.render("more-details");
+});
+
 router.post("/signup", async function (req, res) {
   const userData = req.body;
   const enteredEmail = userData.email;

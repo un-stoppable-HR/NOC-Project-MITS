@@ -85,12 +85,14 @@ nav a:hover {
 nav span {
   padding-right: 0.25rem;
 }
-.hamburger{
+
+.hamburger {
   display: none;
   height: 30px;
   margin-top: -5px;
 }
-.line{
+
+.line {
   display: block;
   width: 25px;
   height: 3px;
@@ -99,7 +101,7 @@ nav span {
   text-align: center;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color:white;
+  background-color: white;
 }
 
 /* nav-header-ends */
@@ -161,7 +163,7 @@ footer span {
   font-size: 1.2rem;
 }
 
-.btn-nav {  
+.btn-nav {
   font: inherit;
   color: var(--color-primary-100);
   background-color: var(--color-primary-400);
@@ -227,54 +229,58 @@ main {
     text-align: center;
   }
 
-  html{
+  html {
     width: 100%;
     font-size: 50%;
-}
-.hamburger{
+  }
+
+  .hamburger {
     display: block;
     cursor: pointer;
     padding-top: 2.5px;
-}
-.hamburger.active .line:nth-child(2){
+  }
+
+  .hamburger.active .line:nth-child(2) {
     opacity: 0;
-}
-.hamburger.active .line:nth-child(1){
-    transform:translateY(8px) rotate(45deg);
-}
-.hamburger.active .line:nth-child(3){
-    transform:translateY(-8px) rotate(-45deg);
-}
-ul{
+  }
+
+  .hamburger.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  nav ul {
     position: fixed;
     left: -100%;
-    top:135px;
-    gap:0;
+    top: 135px;
+    gap: 0;
     flex-direction: column;
     justify-content: center;
     background-color: var(--color-primary-200);
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index:999;
-    
-}
-ul li{
-    margin:16px 0;
+    z-index: 999;
+  }
+
+  nav ul li {
+    margin: 16px 0;
     width: 70%;
     height: 40px;
     line-height: -5px;
-    padding-top: 7px;  
-}
+    padding-top: 7px;
+  }
 
-ul li a{
-    font-size:2.5rem;
+  nav ul li a {
+    font-size: 2.5rem;
     font-weight: 500;
     color: var(--color-primary-500);
-}
+  }
 
-
-ul.active{
-    left:0;
-}
+  nav ul.active {
+    left: 0;
+  }
 }

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head", { title: 'Admin Panel - T&P' }) %>
+
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="/styles/dashboard.css" />
+    <link rel="stylesheet" href="/styles/noc-form.css" />
+  </head>
+
+  <body>
+    <header>
+      <%- include("includes/main-header") %> 
+      <%- include("includes/nav-header") %>
+    </header>
+
+    <main>
+      <section class="table_parent_container">
+        <section class="table_container">
+          <section class="table_header">
+            <h1>Admin Panel</h1>
+          </section>
+          <section class="table_body">
+            <table>
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Department Coordinator Name</th>
+                  <th>Department Coordinator Email</th>
+                  <th>Department</th>
+                  <th>Update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for (let i = 1; i <= 50; i += 3) { %>
+                <tr>
+                  <td><%= i %></td>
+                  <td>DR.Atul Chauhan</td>
+                  <td>atul@mitsgwalior.in</td>
+                  <td>
+                    <select name="department" id="department" required>
+                      <option value="" disabled selected hidden>
+                        Choose Your Department
+                      </option>
+                      <option value="1">Civil Engineering</option>
+                      <option value="2">
+                        Mechanical Engineering & Automobile
+                      </option>
+                      <option value="3">Electrical Engineering</option>
+                      <option value="4">Electronics Engineering & ET</option>
+                      <option value="5">
+                        Computer Science & Engineering & MCA
+                      </option>
+                      <option value="6">Mathematics and Computing</option>
+                      <option value="7">Chemical Engineering</option>
+                      <option value="8">Information Technology</option>
+                      <option value="9">Biotechnology</option>
+                      <option value="10">MBA</option>
+                    </select>
+                  </td>
+                  <td><button class="btn">Update</button></td>
+                </tr>
+                <tr>
+                  <td><%= i + 1 %></td>
+                  <td>DR.Atul Chauhan</td>
+                  <td>atul@mitsgwalior.in</td>
+                  <td>
+                    <select name="department" id="department" required>
+                      <option value="" disabled selected hidden>
+                        Choose Your Department
+                      </option>
+                      <option value="1">Civil Engineering</option>
+                      <option value="2">
+                        Mechanical Engineering & Automobile
+                      </option>
+                      <option value="3">Electrical Engineering</option>
+                      <option value="4">Electronics Engineering & ET</option>
+                      <option value="5">
+                        Computer Science & Engineering & MCA
+                      </option>
+                      <option value="6">Mathematics and Computing</option>
+                      <option value="7">Chemical Engineering</option>
+                      <option value="8">Information Technology</option>
+                      <option value="9">Biotechnology</option>
+                      <option value="10">MBA</option>
+                    </select>
+                  </td>
+                  <td><button class="btn">Update</button></td>
+                </tr>
+                <tr>
+                  <td><%= i + 2 %></td>
+                  <td>DR.Atul Chauhan</td>
+                  <td>atul@mitsgwalior.in</td>
+                  <td>
+                    <select name="department" id="department" required>
+                      <option value="" disabled selected hidden>
+                        Choose Your Department
+                      </option>
+                      <option value="1">Civil Engineering</option>
+                      <option value="2">
+                        Mechanical Engineering & Automobile
+                      </option>
+                      <option value="3">Electrical Engineering</option>
+                      <option value="4">Electronics Engineering & ET</option>
+                      <option value="5">
+                        Computer Science & Engineering & MCA
+                      </option>
+                      <option value="6">Mathematics and Computing</option>
+                      <option value="7">Chemical Engineering</option>
+                      <option value="8">Information Technology</option>
+                      <option value="9">Biotechnology</option>
+                      <option value="10">MBA</option>
+                    </select>
+                  </td>
+                  <td><button class="btn">Update</button></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+        <%- include("includes/footer") %>
+    </footer>
+  </body>
+</html>

@@ -5,6 +5,8 @@
 
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="/styles/dashboard.css" />
+    <link rel="stylesheet" href="/styles/noc-form.css" />
+    <link rel="stylesheet" href="/styles/more-details.css" />
   </head>
 
   <body>
@@ -13,82 +15,192 @@
       <%- include("includes/nav-header") %>
     </header>
 
-    <main>      
+    <main>
       <section class="student-details-parent-container">
         <section class="student-details-container">
           <section class="student-details-heading">
-            <h1>Student's Details</h1>
+            <h1>Current Status</h1>
           </section>
           <section class="student-details-body">
             <table>
               <tbody>
                 <tr>
-                  <td><b>Name - </b><span>Jayesh Patidar</span></td>
+                  <td><p class="status approved">Approved</p></td>
                 </tr>
-                <tr>
-                   <td><b>Enrollment Number - </b><span>0901IO201035</span></td>
-                </tr>
-                <tr>
-                  <td><b>Email - </b><span>patidarjay124@gmail.com</span></td>
-                </tr>
-                <tr>
-                  <td><b>Mobile Number - </b><span>8827945491</span></td>
-                </tr>
-                <tr>
-                  <td><b>Father's Name  - </b><span>Mahendra Patidar</span></td>
-                </tr>
-                <tr>
-                  <td><b>Branch - </b><span>IT-IOT<span></td>
-                </tr>
-                <tr>
-                  <td><b>Year - </b><span>I st Year<span></td>
-                </tr>
-                <tr>
-                   <td><b>Current Address - </b><span>Maheswar Road Dhamnod<span></td>
-                </tr>
-                <tr>
-                   <td><b>State - </b><span>M.P.<span></td>
-                </tr>
-                <tr>
-                   <td><b>Pin Code - </b><span>454552<span></td>
-                </tr>
-                <tr>
-                    <td><b>Company Name  - </b><span>info.Tech<span></td>
-                </tr>
-                <tr>
-                   <td><b>Location  - </b><span>Gole ka mandir Gwalior<span></td>
-                </tr>
-                <tr>
-                    <td><b>Designation of Person - </b><span>Web Developer<span></td>
-                </tr>
-                <tr>
-                    <td><b>Internship Days - </b><span>60<span></td>
-                </tr>
-                <tr>
-                    <td><b>Internship Start Date - </b><span>1/5/2023<span></td>
-                </tr>
-                <tr>
-                    <td><b>Internship End Date - </b><span>1/7/2023<span></td>
-                </tr>
-                <tr>
-                    <td><b>Internship Website - </b><span>http://loclahost:3000<span></td>
-                </tr>
-                <tr>
-                    <td><b>Apply Through - </b><span>Internsala<span></td>
-                </tr>
-                <tr>
-                    <td><b>Full Address - </b><span>23,gole ka mandr pragati vihar ,Gwalior<span></td>
-                </tr>
-
-
-
               </tbody>
             </table>
           </section>
         </section>
       </section>
 
-      
+      <section class="details-parent-container">
+        <section class="student-details-parent-container">
+          <section class="student-details-container">
+            <section class="student-details-heading">
+              <h1>Student's Details</h1>
+            </section>
+            <section class="student-details-body">
+              <table>
+                <tbody>
+                  <tr>
+                    <td><b>Name - </b><span>Jayesh Patidar</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Enrollment Number - </b><span>0901IO201035</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Email - </b><span>patidarjay124@gmail.com</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Mobile Number - </b><span>8827945491</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Father's Name - </b><span>Mahendra Patidar</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Branch - </b
+                      ><span>B.Tech - Internet of Things (IOT)</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Department - </b><span>Information Technology</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Semester - </b><span>1</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Current Address - </b
+                      ><span>Maheswar Road Dhamnod</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>City - </b><span>Indore</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>State - </b><span>Madhya Pradesh</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Pin Code - </b><span>454552</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </section>
+        </section>
+
+        <section class="student-details-parent-container">
+          <section class="student-details-container">
+            <section class="student-details-heading">
+              <h1>Company Details</h1>
+            </section>
+            <section class="student-details-body">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>NOC Application Date - </b><span>22/04/2023</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Company Name - </b><span>info.Tech</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Location - </b><span>Gole ka mandir Gwalior</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Name of person receiving NOC in company - </b
+                      ><span>Atul</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Designation of person receiving NOC in company - </b
+                      ><span>HR</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Internship Days - </b><span>60</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Internship Start Date - </b><span>1/5/2023</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Internship End Date - </b><span>1/7/2023</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Stipend (per month) - </b><span>&#x20B9; 4000</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Company Website - </b
+                      ><span>http://loclahost:3000</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Apply Through - </b><span>Internsala</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Full Address of company- </b
+                      ><span>23,gole ka mandr pragati vihar ,Gwalior</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="NOC-form-parent-container">
+        <div class="NOC-form-container">
+          <h4 class="noc-form-sub-heading">Update Status</h4>
+          <form action="" method="">
+            <ul class="input-fields-list">
+              <li>
+                <label for="status">Status</label>
+                <select name="status" id="status" required>
+                  <option value="" disabled selected hidden>
+                    Choose Status
+                  </option>
+                  <option value="approved">Approved</option>
+                  <option value="pending">Pending</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </li>
+              <li>
+                <label for="query">Query</label>
+                <textarea
+                  name="query"
+                  id="query"
+                  cols="80"
+                  rows="10"
+                ></textarea>
+              </li>
+            </ul>
+
+            <div class="button-container">
+              <button type="reset" class="btn-alt">Clear</button>
+              <button type="submit" class="btn">Update</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer>

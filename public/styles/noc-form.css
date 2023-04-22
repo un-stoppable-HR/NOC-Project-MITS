@@ -69,7 +69,8 @@
 }
 
 input,
-select {
+select,
+textarea {
   display: block;
   padding: 0.5rem;
   font: inherit;
