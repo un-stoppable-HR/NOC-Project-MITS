@@ -27,6 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files (e.g. CSS files)
 app.use(express.static("public"));
 
+app.use("/offerLetters", express.static("offerLetters"));
+
 app.use(
   session({
     // key: "user-cookie",
@@ -78,6 +80,7 @@ app.use(async function (req, res, next) {
     res.locals.isRegisteredStudent = false;
   } else {
     res.locals.isRegisteredStudent = true;
+    res.locals.studentEnrollmentNo = students[0].enrollment_no;
   }
 
   res.locals.isAuth = isAuth;

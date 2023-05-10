@@ -82,32 +82,32 @@
             Organization details in which you are applying for Internship
           </h4>
   
-          <form action="/organization-details.html" method="GET">
+          <form action="/organization-details" method="POST" enctype="multipart/form-data">
             <ul class="input-fields-list">
               <li>
-                <label for="org-name">Organization / Company Name</label>
+                <label for="orgName">Organization / Company Name</label>
                 <input
                   type="text"
-                  id="org-name"
-                  name="org-name"
+                  id="orgName"
+                  name="orgName"
                   placeholder="Enter Organization / Company Name"
                   required
                 />
               </li>
               <li>
-                <label for="org-location"
+                <label for="orgLocation"
                   >Location / City of Organization / Company</label
                 >
                 <input
                   type="text"
-                  id="org-location"
-                  name="org-location"
+                  id="orgLocation"
+                  name="orgLocation"
                   placeholder="Enter Location / City of Organization / Company"
                   required
                 />
               </li>
               <li>
-                <label for="org-person-receiving-noc"
+                <label for="orgPersonReceivingNOC"
                   >Name of Person receiving NOC in Organization / Company for
                   Internship
                   <br />
@@ -118,80 +118,80 @@
                 >
                 <input
                   type="text"
-                  id="org-person-receiving-noc"
-                  name="org-person-receiving-noc"
+                  id="orgPersonReceivingNOC"
+                  name="orgPersonReceivingNOC"
                   placeholder="Enter Name of Person receiving NOC in Organization / Company for Internship"
                 />
               </li>
               <li>
-                <label for="org-designation-person-receiving-noc"
+                <label for="orgDesignationPersonReceivingNOC"
                   >Designation of Person receiving NOC in Organization / Company
                   for Internship</label
                 >
                 <input
                   type="text"
-                  id="org-designation-person-receiving-noc"
-                  name="org-designation-person-receiving-noc"
+                  id="orgDesignationPersonReceivingNOC"
+                  name="orgDesignationPersonReceivingNOC"
                   placeholder="Enter Designation of Person receiving NOC in Organization / Company for Internship"
                   required
                 />
               </li>
               <li>
-                <label for="internship-days">Internship days</label>
+                <label for="internshipDays">Internship days</label>
                 <input
                   type="number"
-                  id="internship-days"
-                  name="internship-days"
+                  id="internshipDays"
+                  name="internshipDays"
                   placeholder="Enter duration of Internship"
                   required
                 />
               </li>
               <li>
-                <label for="internship-starting-date"
+                <label for="internshipStartingDate"
                   >Internship starting date</label
                 >
                 <input
                   type="date"
-                  name="internship-starting-date"
-                  id="internship-starting-date"
+                  name="internshipStartingDate"
+                  id="internshipStartingDate"
                   required
                 />
               </li>
               <li>
-                <label for="internship-end-date">Internship End date</label>
+                <label for="internshipEndDate">Internship End date</label>
                 <input
                   type="date"
-                  id="internship-end-date"
-                  name="internship-end-date"
+                  id="internshipEndDate"
+                  name="internshipEndDate"
                   required
                 />
               </li>
               <li>
-                <label for="org-address"
+                <label for="orgAddress"
                   >Full Address of organization where you want to go for
                   Internship</label
                 >
                 <input
                   type="text"
-                  id="org-address"
-                  name="org-address"
+                  id="orgAddress"
+                  name="orgAddress"
                   placeholder="Enter Full Address of organization where you want to go for Internship"
                   required
                 />
               </li>
               <li>
-                <label for="org-website">Organization website</label>
+                <label for="orgWebsite">Organization website</label>
                 <input
                   type="url"
-                  id="org-website"
-                  name="org-website"
+                  id="orgWebsite"
+                  name="orgWebsite"
                   placeholder="Enter Organization website"
                   required
                 />
               </li>
               <li>
-                <label for="applying-through">Applying through</label>
-                <select name="applying-through" id="applying-through" required>
+                <label for="applyingThrough">Applying through</label>
+                <select name="applyingThrough" id="applyingThrough" required>
                   <option value="" disabled selected hidden>Choose</option>
                   <option value="reference">Employee Reference</option>
                   <option value="internet">Internet / Website</option>
@@ -207,6 +207,7 @@
                   type="file"
                   name="internship-offer-letter"
                   id="internship-offer-letter"
+                  accept=".pdf"
                 />
               </li>
               <li>
