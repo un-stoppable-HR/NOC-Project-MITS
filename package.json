@@ -1,5 +1,5 @@
 {
-  "name": "noc-project",
+  "name": "noc-project-mits",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/un-stoppable-HR/NOC-Project.git"
+    "url": "git+https://github.com/un-stoppable-HR/NOC-Project-MITS.git"
   },
   "author": "Harsh Rajput",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/un-stoppable-HR/NOC-Project/issues"
+    "url": "https://github.com/un-stoppable-HR/NOC-Project-MITS/issues"
   },
-  "homepage": "https://github.com/un-stoppable-HR/NOC-Project#readme",
+  "homepage": "https://github.com/un-stoppable-HR/NOC-Project-MITS#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "ejs": "^3.1.9",
