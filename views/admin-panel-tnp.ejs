@@ -1,129 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("includes/head", { title: 'Admin Panel - T&P' }) %>
+
+<head>
+  <%- include("includes/head", { title: 'Admin Panel - T&P' }) %>
 
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="/styles/dashboard.css" />
     <link rel="stylesheet" href="/styles/noc-form.css" />
-  </head>
+</head>
 
-  <body>
-    <header>
-      <%- include("includes/main-header") %> 
-      <%- include("includes/nav-header") %>
-    </header>
+<body>
+  <header>
+    <%- include("includes/main-header") %>
+    <%- include("includes/nav-header") %>
+  </header>
 
-    <main>
-      <section class="table_parent_container">
-        <section class="table_container">
-          <section class="table_header">
-            <h1>Admin Panel</h1>
-          </section>
-          <section class="table_body">
-            <table>
-              <thead>
+  <main>
+    <section class="table_parent_container">
+      <section class="table_container">
+        <section class="table_header">
+          <h1>Admin Panel</h1>
+        </section>
+        <section class="table_body">
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Department Coordinator Email</th>
+                <th>Department</th>
+                <th>Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let serialNo=1 %>
+              <% for (const potentialCoordinator of potentialCoordinators) { %>
                 <tr>
-                  <th>S.No</th>
-                  <th>Department Coordinator Name</th>
-                  <th>Department Coordinator Email</th>
-                  <th>Department</th>
-                  <th>Update</th>
+                  <form action="/admin-panel-tnp/<%= potentialCoordinator.user_id %>" method="POST">
+                    <td>
+                      <%= serialNo %>
+                    </td>
+                    <td>
+                      <%= potentialCoordinator.email %>
+                    </td>
+                    <td>
+                      <select name="department" id="department-admin-panel" required>
+                        <option value="" disabled selected hidden>
+                          Choose Department
+                        </option>
+                        <option value="1" <%=potentialCoordinator.department_id===1 ? "selected" : "" %>>
+                          Civil Engineering
+                        </option>
+                        <option value="2" <%=potentialCoordinator.department_id===2 ? "selected" : "" %>>
+                          Mechanical Engineering & Automobile
+                        </option>
+                        <option value="3" <%=potentialCoordinator.department_id===3 ? "selected" : "" %>>
+                          Electrical Engineering
+                        </option>
+                        <option value="4" <%=potentialCoordinator.department_id===4 ? "selected" : "" %>>
+                          Electronics Engineering & ET
+                        </option>
+                        <option value="5" <%=potentialCoordinator.department_id===5 ? "selected" : "" %>>
+                          Computer Science & Engineering & MCA
+                        </option>
+                        <option value="6" <%=potentialCoordinator.department_id===6 ? "selected" : "" %>>
+                          Mathematics and Computing
+                        </option>
+                        <option value="7" <%=potentialCoordinator.department_id===7 ? "selected" : "" %>>
+                          Chemical Engineering
+                        </option>
+                        <option value="8" <%=potentialCoordinator.department_id===8 ? "selected" : "" %>>
+                          Information Technology
+                        </option>
+                        <option value="9" <%=potentialCoordinator.department_id===9 ? "selected" : "" %>>
+                          Biotechnology
+                        </option>
+                        <option value="10" <%=potentialCoordinator.department_id===10 ? "selected" : "" %>>
+                          MBA
+                        </option>
+                      </select>
+                    </td>
+                    <td><button class="btn">Update</button></td>
+                  </form>
                 </tr>
-              </thead>
-              <tbody>
-                <% for (let i = 1; i <= 50; i += 3) { %>
-                <tr>
-                  <td><%= i %></td>
-                  <td>DR.Atul Chauhan</td>
-                  <td>atul@mitsgwalior.in</td>
-                  <td>
-                    <select name="department" id="department" required>
-                      <option value="" disabled selected hidden>
-                        Choose Your Department
-                      </option>
-                      <option value="1">Civil Engineering</option>
-                      <option value="2">
-                        Mechanical Engineering & Automobile
-                      </option>
-                      <option value="3">Electrical Engineering</option>
-                      <option value="4">Electronics Engineering & ET</option>
-                      <option value="5">
-                        Computer Science & Engineering & MCA
-                      </option>
-                      <option value="6">Mathematics and Computing</option>
-                      <option value="7">Chemical Engineering</option>
-                      <option value="8">Information Technology</option>
-                      <option value="9">Biotechnology</option>
-                      <option value="10">MBA</option>
-                    </select>
-                  </td>
-                  <td><button class="btn">Update</button></td>
-                </tr>
-                <tr>
-                  <td><%= i + 1 %></td>
-                  <td>DR.Atul Chauhan</td>
-                  <td>atul@mitsgwalior.in</td>
-                  <td>
-                    <select name="department" id="department" required>
-                      <option value="" disabled selected hidden>
-                        Choose Your Department
-                      </option>
-                      <option value="1">Civil Engineering</option>
-                      <option value="2">
-                        Mechanical Engineering & Automobile
-                      </option>
-                      <option value="3">Electrical Engineering</option>
-                      <option value="4">Electronics Engineering & ET</option>
-                      <option value="5">
-                        Computer Science & Engineering & MCA
-                      </option>
-                      <option value="6">Mathematics and Computing</option>
-                      <option value="7">Chemical Engineering</option>
-                      <option value="8">Information Technology</option>
-                      <option value="9">Biotechnology</option>
-                      <option value="10">MBA</option>
-                    </select>
-                  </td>
-                  <td><button class="btn">Update</button></td>
-                </tr>
-                <tr>
-                  <td><%= i + 2 %></td>
-                  <td>DR.Atul Chauhan</td>
-                  <td>atul@mitsgwalior.in</td>
-                  <td>
-                    <select name="department" id="department" required>
-                      <option value="" disabled selected hidden>
-                        Choose Your Department
-                      </option>
-                      <option value="1">Civil Engineering</option>
-                      <option value="2">
-                        Mechanical Engineering & Automobile
-                      </option>
-                      <option value="3">Electrical Engineering</option>
-                      <option value="4">Electronics Engineering & ET</option>
-                      <option value="5">
-                        Computer Science & Engineering & MCA
-                      </option>
-                      <option value="6">Mathematics and Computing</option>
-                      <option value="7">Chemical Engineering</option>
-                      <option value="8">Information Technology</option>
-                      <option value="9">Biotechnology</option>
-                      <option value="10">MBA</option>
-                    </select>
-                  </td>
-                  <td><button class="btn">Update</button></td>
-                </tr>
-                <% } %>
-              </tbody>
-            </table>
-          </section>
+                <% serialNo++ %>
+              <% } %>
+            </tbody>
+          </table>
         </section>
       </section>
-    </main>
+    </section>
+  </main>
 
-    <footer>
-        <%- include("includes/footer") %>
-    </footer>
-  </body>
+  <footer>
+    <%- include("includes/footer") %>
+  </footer>
+</body>
+
 </html>

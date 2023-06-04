@@ -125,6 +125,10 @@ th {
   border-collapse: collapse;
 }
 
+th {
+  text-transform: uppercase;
+}
+
 tbody tr:nth-child(even) {
   background-color: var(--color-primary-100);
 }
