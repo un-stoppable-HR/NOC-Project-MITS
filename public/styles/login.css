@@ -17,6 +17,15 @@ main {
   background-color: var(--color-secondary-100);
 }
 
+#main-header h1 {
+  color: white;
+}
+
+#main-header h2 {
+  color: chartreuse;
+}
+
+
 #mits-logo-container {
   justify-content: center;
 }
