@@ -214,7 +214,9 @@ router.post("/login", async function (req, res) {
 router.post("/logout", function (req, res) {
   req.session.user = null;
   req.session.isAuthenticated = false;
-  res.redirect("/");
+  req.session.save(function () {
+    res.redirect("/");
+  });
 });
 
 module.exports = router;
