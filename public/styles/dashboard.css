@@ -95,7 +95,6 @@ p {
   border: 2px solid var(--color-primary-500);
   border-radius: 12px;
   text-align: center;
-  padding-bottom: 2rem;
   overflow: auto;
 }
 
@@ -108,7 +107,7 @@ p {
 
 .table_body {
   overflow: auto;
-  height: 29rem;
+  height: 65vh;
 }
 
 thead {
