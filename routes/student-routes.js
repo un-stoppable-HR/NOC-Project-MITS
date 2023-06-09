@@ -116,7 +116,8 @@ router.post(
     ];
 
     const query1 = `
-    INSERT INTO noc.organizations (name, location, person_receiving_noc_name, person_receiving_noc_designation, address, website) VALUES (?)
+    INSERT INTO noc.organizations (name, location, person_receiving_noc_name, person_receiving_noc_designation, address, website) 
+    VALUES (?);
     `;
 
     const [organizations] = await db.query(query1, [data1]);
@@ -130,15 +131,64 @@ router.post(
       userData.internshipStartingDate,
       userData.internshipEndDate,
       userData.applyingThrough,
-      "pending",
       uploadedOfferLetter.path,
     ];
 
     const query2 = `
-    INSERT INTO noc.noc_applications (enrollment_no, org_id, internship_days, internship_start_date, internship_end_date, applying_through, status, offer_letter) VALUES (?);
+    INSERT INTO noc.noc_applications (enrollment_no, org_id, internship_days, internship_start_date, internship_end_date, applying_through, offer_letter) 
+    VALUES (?);
     `;
 
-    await db.query(query2, [data2]);
+    const [nocs] = await db.query(query2, [data2]);
+    
+    const nocID = nocs.insertId;
+    
+    const query3 = `
+    SELECT department_id
+    FROM students
+    WHERE user_id = ?;
+    `;
+
+    const [departmentID] = await db.query(query3, req.session.user.id);
+    
+    const query4 = `
+    SELECT coordinator_id
+    FROM department_coordinator
+    WHERE department_id = ?;
+    `;
+
+    const [coordinatorID] = await db.query(query4, departmentID[0].department_id);
+    
+    const data5 = [
+      coordinatorID[0].coordinator_id,
+      nocID
+    ];
+
+    const query5 = `
+    INSERT INTO department_approval (coordinator_id, noc_id) 
+    VALUES (?);
+    `;
+
+    await db.query(query5, [data5]);
+
+    const query6 = `
+    SELECT tpo_id
+    FROM tpo;
+    `;
+
+    const [tpoID] = await db.query(query6);
+    
+    const data7 = [
+      tpoID[0].tpo_id,
+      nocID
+    ];
+
+    const query7 = `
+    INSERT INTO tpo_approval (tpo_id, noc_id) 
+    VALUES (?);
+    `;
+
+    await db.query(query7, [data7]);
 
     res.redirect("/");
   }
