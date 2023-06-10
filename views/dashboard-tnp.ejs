@@ -25,7 +25,7 @@
                 <h1>Approved NOC's</h1>
               </section>
               <section class="noc-stats-details-body">
-                <p>10</p>
+                <p><%= statusStats.count_approved %></p>
               </section>
             </section>
         </li>
@@ -35,7 +35,7 @@
                 <h1>Pending NOC's</h1>
               </section>
               <section class="noc-stats-details-body">
-                <p>10</p>
+                <p><%= statusStats.count_pending %></p>
               </section>
             </section>
         </li>
@@ -45,7 +45,7 @@
                 <h1>Rejected NOC's</h1>
               </section>
               <section class="noc-stats-details-body">
-                <p>10</p>
+                <p><%= statusStats.count_rejected %></p>
               </section>
             </section>
         </li>
@@ -70,34 +70,18 @@
                 </tr>
               </thead>
               <tbody>
-                <% for (let i = 1; i <= 50; i += 3) { %>
+                <% let serialNo=1 %>
+                <% for (const noc of nocs) { %>
                 <tr>
-                  <td><%= i %></td>
-                  <td>0901IO201035</td>
-                  <td>Jayesh Patidar</td>
-                  <td>Google</td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td><p class="status pending">Pending</p></td>
+                  <td><%= serialNo %></td>
+                  <td><%= noc.enrollment_no %></td>
+                  <td><%= noc.student_name %></td>
+                  <td><%= noc.organization_name %></td>
+                  <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
+                  <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
                   <td><button class="btn">View</button></td>
                 </tr>
-                <tr>
-                  <td><%= i + 1 %></td>
-                  <td>0901IO201035</td>
-                  <td>Jayesh Patidar</td>
-                  <td>Google</td>
-                  <td><p class="status rejected">Rejected</p></td>
-                  <td><p class="status pending">Pending</p></td>
-                  <td><button class="btn">View</button></td>
-                </tr>
-                <tr>
-                  <td><%= i + 2 %></td>
-                  <td>0901IO201035</td>
-                  <td>Jayesh Patidar</td>
-                  <td>Google</td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td><button class="btn">View</button></td>
-                </tr>
+                <% serialNo++ %>
                 <% } %>
               </tbody>
             </table>

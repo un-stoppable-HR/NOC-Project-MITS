@@ -107,7 +107,11 @@ p {
 
 .table_body {
   overflow: auto;
-  height: 65vh;
+  min-height: auto;
+  max-height: 525px; 
+  /* Height of single row of tbody = 79px 
+  and 
+  Height of single row of thead = 51px */
 }
 
 thead {
@@ -141,12 +145,13 @@ tbody tr:nth-child(odd) {
 }
 
 .status {
-  text-align: center;
-  margin: 0;
-  padding: 0.5rem;
+  /* text-align: center; */
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
   border-radius: 2rem;
   text-transform: uppercase;
   font-weight: 500;
+  width: fit-content;
 }
 
 .approved {

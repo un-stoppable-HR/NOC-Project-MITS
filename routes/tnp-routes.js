@@ -4,7 +4,7 @@ const db = require("../data/database");
 
 const router = express.Router();
 
-router.get("/dashboard-tnp", function (req, res) {
+router.get("/dashboard-tnp", async function (req, res) {
   if (!res.locals.isAuth) {
     return res.status(401).render("401");
   }
@@ -13,7 +13,41 @@ router.get("/dashboard-tnp", function (req, res) {
     return res.status(403).render("403");
   }
 
-  res.render("dashboard-tnp");
+  const query1 = `
+  SELECT 
+    noc_applications.noc_id,
+    noc_applications.enrollment_no,
+    students.name AS student_name,
+    organizations.name AS organization_name,
+    department_approval.approval_status AS department_status,
+    tpo_approval.approval_status AS tpo_status
+  FROM 
+    noc_applications
+    INNER JOIN organizations 
+      ON noc_applications.org_id = organizations.org_id
+    INNER JOIN department_approval
+      ON noc_applications.noc_id = department_approval.noc_id
+    INNER JOIN tpo_approval
+      ON noc_applications.noc_id = tpo_approval.noc_id
+    INNER JOIN students
+      ON noc_applications.enrollment_no = students.enrollment_no;
+  `;
+
+  const [nocs] = await db.query(query1);
+
+  const query2 = `
+  SELECT
+    COUNT(CASE WHEN tpo_approval.approval_status = 'pending' THEN 1 END) AS count_pending,
+    COUNT(CASE WHEN tpo_approval.approval_status = 'rejected' THEN 1 END) AS count_rejected,
+    COUNT(CASE WHEN tpo_approval.approval_status = 'approved' THEN 1 END) AS count_approved
+  FROM
+    noc_applications
+    INNER JOIN tpo_approval ON noc_applications.noc_id = tpo_approval.noc_id;
+  `;
+
+  const [statusStats] = await db.query(query2);
+
+  res.render("dashboard-tnp", {nocs: nocs, statusStats: statusStats[0]});
 });
 
 router.get("/admin-panel-tnp", async function (req, res) {
