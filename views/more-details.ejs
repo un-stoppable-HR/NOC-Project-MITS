@@ -19,13 +19,27 @@
       <section class="student-details-parent-container">
         <section class="student-details-container">
           <section class="student-details-heading">
-            <h1>Current Status</h1>
+            <h1>Department Status</h1>
           </section>
           <section class="student-details-body">
             <table>
               <tbody>
                 <tr>
-                  <td><p class="status approved">Approved</p></td>
+                  <td><p class="status <%= nocDetails.department_status %>"><%= nocDetails.department_status %></p></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section class="student-details-container">
+          <section class="student-details-heading">
+            <h1>T&P Status</h1>
+          </section>
+          <section class="student-details-body">
+            <table>
+              <tbody>
+                <tr>
+                  <td><p class="status <%= nocDetails.tpo_status %>"><%= nocDetails.tpo_status %></p></td>
                 </tr>
               </tbody>
             </table>
@@ -43,52 +57,52 @@
               <table>
                 <tbody>
                   <tr>
-                    <td><b>Name - </b><span>Jayesh Patidar</span></td>
+                    <td><b>Name - </b><span><%= nocDetails.student_name %></span></td>
                   </tr>
                   <tr>
                     <td>
-                      <b>Enrollment Number - </b><span>0901IO201035</span>
+                      <b>Enrollment Number - </b><span><%= nocDetails.enrollment_no %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>Email - </b><span>patidarjay124@gmail.com</span></td>
+                    <td><b>Email - </b><span><%= studentEmail.email %></span></td>
                   </tr>
                   <tr>
-                    <td><b>Mobile Number - </b><span>8827945491</span></td>
+                    <td><b>Mobile Number - </b><span><%= nocDetails.student_mobile_no %></span></td>
                   </tr>
                   <tr>
                     <td>
-                      <b>Father's Name - </b><span>Mahendra Patidar</span>
+                      <b>Father's Name - </b><span><%= nocDetails.father_name %></span>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <b>Branch - </b
-                      ><span>B.Tech - Internet of Things (IOT)</span>
+                      ><span><%= branchName.branch_name %></span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <b>Department - </b><span>Information Technology</span>
+                      <b>Department - </b><span><%= departmentName.department_name %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>Semester - </b><span>1</span></td>
+                    <td><b>Semester - </b><span><%= nocDetails.semester %></span></td>
                   </tr>
                   <tr>
                     <td>
                       <b>Current Address - </b
-                      ><span>Maheswar Road Dhamnod</span>
+                      ><span><%= nocDetails.student_current_address %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>City - </b><span>Indore</span></td>
+                    <td><b>City - </b><span><%= nocDetails.student_city %></span></td>
                   </tr>
                   <tr>
-                    <td><b>State - </b><span>Madhya Pradesh</span></td>
+                    <td><b>State - </b><span><%= nocDetails.student_state %></span></td>
                   </tr>
                   <tr>
-                    <td><b>Pin Code - </b><span>454552</span></td>
+                    <td><b>Pin Code - </b><span><%= nocDetails.student_pin_code %></span></td>
                   </tr>
                 </tbody>
               </table>
@@ -106,58 +120,58 @@
                 <tbody>
                   <tr>
                     <td>
-                      <b>NOC Application Date - </b><span>22/04/2023</span>
+                      <b>NOC Application Date - </b><span><%= nocDetails.date %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>Company Name - </b><span>info.Tech</span></td>
+                    <td><b>Company Name - </b><span><%= nocDetails.organization_name %></span></td>
                   </tr>
                   <tr>
                     <td>
-                      <b>Location - </b><span>Gole ka mandir Gwalior</span>
+                      <b>Location - </b><span><%= nocDetails.organization_location %></span>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <b>Name of person receiving NOC in company - </b
-                      ><span>Atul</span>
+                      ><span><%= nocDetails.person_receiving_noc_name %></span>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <b>Designation of person receiving NOC in company - </b
-                      ><span>HR</span>
+                      ><span><%= nocDetails.person_receiving_noc_designation %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>Internship Days - </b><span>60</span></td>
+                    <td><b>Internship Days - </b><span><%= nocDetails.internship_days %></span></td>
                   </tr>
                   <tr>
                     <td>
-                      <b>Internship Start Date - </b><span>1/5/2023</span>
+                      <b>Internship Start Date - </b><span><%= nocDetails.internship_start_date %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>Internship End Date - </b><span>1/7/2023</span></td>
+                    <td><b>Internship End Date - </b><span><%= nocDetails.internship_end_date %></span></td>
                   </tr>
                   <tr>
                     <td>
-                      <b>Stipend (per month) - </b><span>&#x20B9; 4000</span>
+                      <b>Stipend (per month) - </b><span>&#x20B9; <%= nocDetails.stipend %></span>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <b>Company Website - </b
-                      ><span>http://loclahost:3000</span>
+                      ><span><%= nocDetails.organization_website %></span>
                     </td>
                   </tr>
                   <tr>
-                    <td><b>Apply Through - </b><span>Internsala</span></td>
+                    <td><b>Apply Through - </b><span><%= nocDetails.applying_through %></span></td>
                   </tr>
                   <tr>
                     <td>
                       <b>Full Address of company- </b
-                      ><span>23,gole ka mandr pragati vihar ,Gwalior</span>
+                      ><span><%= nocDetails.organization_address %></span>
                     </td>
                   </tr>
                 </tbody>

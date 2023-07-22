@@ -73,13 +73,15 @@
                 <% let serialNo=1 %>
                 <% for (const noc of nocs) { %>
                 <tr>
-                  <td><%= serialNo %></td>
-                  <td><%= noc.enrollment_no %></td>
-                  <td><%= noc.student_name %></td>
-                  <td><%= noc.organization_name %></td>
-                  <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
-                  <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
-                  <td><button class="btn">View</button></td>
+                  <form action="/dashboard-tnp/<%= noc.noc_id %>" method="POST">
+                    <td><%= serialNo %></td>
+                    <td><%= noc.enrollment_no %></td>
+                    <td><%= noc.student_name %></td>
+                    <td><%= noc.organization_name %></td>
+                    <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
+                    <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
+                    <td><button class="btn">View</button></td>
+                  </form>
                 </tr>
                 <% serialNo++ %>
                 <% } %>

@@ -132,10 +132,11 @@ router.post(
       userData.internshipEndDate,
       userData.applyingThrough,
       uploadedOfferLetter.path,
+      userData.stipend
     ];
 
     const query2 = `
-    INSERT INTO noc.noc_applications (enrollment_no, org_id, internship_days, internship_start_date, internship_end_date, applying_through, offer_letter) 
+    INSERT INTO noc.noc_applications (enrollment_no, org_id, internship_days, internship_start_date, internship_end_date, applying_through, offer_letter, stipend) 
     VALUES (?);
     `;
 
