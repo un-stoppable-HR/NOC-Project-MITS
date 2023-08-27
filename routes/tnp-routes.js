@@ -127,7 +127,16 @@ router.post("/dashboard-tnp/:nocID", async function (req, res) {
 
   const [studentEmail] = await db.query(query4, userID);
 
-  res.render("more-details", { nocDetails: nocDetails[0], branchName: branchName[0], departmentName: departmentName[0], studentEmail: studentEmail[0] });
+  req.session.moreDetails = {
+    ...nocDetails[0],
+    ...branchName[0],
+    ...departmentName[0],
+    ...studentEmail[0],
+  };
+
+  req.session.save(function () {
+    res.redirect("/more-details");
+  });
 });
 
 router.get("/admin-panel-tnp", async function (req, res) {

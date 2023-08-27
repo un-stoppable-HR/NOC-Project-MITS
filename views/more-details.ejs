@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("includes/head", { title: 'More Deatils' }) %>
+    <%- include("includes/head", { title: 'More Details' }) %>
 
     <!-- link to stylesheet -->
     <link rel="stylesheet" href="/styles/dashboard.css" />
@@ -26,8 +26,8 @@
               <tbody>
                 <tr>
                   <td>
-                    <p class="status <%= nocDetails.department_status %>">
-                      <%= nocDetails.department_status %>
+                    <p class="status <%= moreDetails.department_status %>">
+                      <%= moreDetails.department_status %>
                     </p>
                   </td>
                 </tr>
@@ -44,8 +44,8 @@
               <tbody>
                 <tr>
                   <td>
-                    <p class="status <%= nocDetails.tpo_status %>">
-                      <%= nocDetails.tpo_status %>
+                    <p class="status <%= moreDetails.tpo_status %>">
+                      <%= moreDetails.tpo_status %>
                     </p>
                   </td>
                 </tr>
@@ -65,66 +65,66 @@
               <tbody>
                 <tr>
                   <td>
-                    <b>Name - </b><span><%= nocDetails.student_name %></span>
+                    <b>Name - </b><span><%= moreDetails.student_name %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Enrollment Number - </b
-                    ><span><%= nocDetails.enrollment_no %></span>
+                    ><span><%= moreDetails.enrollment_no %></span>
                   </td>
                 </tr>
                 <tr>
-                  <td><b>Email - </b><span><%= studentEmail.email %></span></td>
+                  <td><b>Email - </b><span><%= moreDetails.email %></span></td>
                 </tr>
                 <tr>
                   <td>
                     <b>Mobile Number - </b
-                    ><span><%= nocDetails.student_mobile_no %></span>
+                    ><span><%= moreDetails.student_mobile_no %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Father's Name - </b
-                    ><span><%= nocDetails.father_name %></span>
+                    ><span><%= moreDetails.father_name %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>Branch - </b><span><%= branchName.branch_name %></span>
+                    <b>Branch - </b><span><%= moreDetails.branch_name %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Department - </b
-                    ><span><%= departmentName.department_name %></span>
+                    ><span><%= moreDetails.department_name %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>Semester - </b><span><%= nocDetails.semester %></span>
+                    <b>Semester - </b><span><%= moreDetails.semester %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Current Address - </b
-                    ><span><%= nocDetails.student_current_address %></span>
+                    ><span><%= moreDetails.student_current_address %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>City - </b><span><%= nocDetails.student_city %></span>
+                    <b>City - </b><span><%= moreDetails.student_city %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <b>State - </b><span><%= nocDetails.student_state %></span>
+                    <b>State - </b><span><%= moreDetails.student_state %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Pin Code - </b
-                    ><span><%= nocDetails.student_pin_code %></span>
+                    ><span><%= moreDetails.student_pin_code %></span>
                   </td>
                 </tr>
               </tbody>
@@ -142,75 +142,75 @@
                 <tr>
                   <td>
                     <b>NOC Application Date - </b
-                    ><span><%= nocDetails.date %></span>
+                    ><span><%= moreDetails.date %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Company Name - </b
-                    ><span><%= nocDetails.organization_name %></span>
+                    ><span><%= moreDetails.organization_name %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Location - </b
-                    ><span><%= nocDetails.organization_location %></span>
+                    ><span><%= moreDetails.organization_location %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Name of person receiving NOC in company - </b
-                    ><span><%= nocDetails.person_receiving_noc_name %></span>
+                    ><span><%= moreDetails.person_receiving_noc_name %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Designation of person receiving NOC in company - </b
                     ><span
-                      ><%= nocDetails.person_receiving_noc_designation %></span
+                      ><%= moreDetails.person_receiving_noc_designation %></span
                     >
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Internship Days - </b
-                    ><span><%= nocDetails.internship_days %></span>
+                    ><span><%= moreDetails.internship_days %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Internship Start Date - </b
-                    ><span><%= nocDetails.internship_start_date %></span>
+                    ><span><%= moreDetails.internship_start_date %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Internship End Date - </b
-                    ><span><%= nocDetails.internship_end_date %></span>
+                    ><span><%= moreDetails.internship_end_date %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Stipend (per month) - </b
-                    ><span>&#x20B9; <%= nocDetails.stipend %></span>
+                    ><span>&#x20B9; <%= moreDetails.stipend %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Company Website - </b
-                    ><span><%= nocDetails.organization_website %></span>
+                    ><span><%= moreDetails.organization_website %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Apply Through - </b
-                    ><span><%= nocDetails.applying_through %></span>
+                    ><span><%= moreDetails.applying_through %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Full Address of company- </b
-                    ><span><%= nocDetails.organization_address %></span>
+                    ><span><%= moreDetails.organization_address %></span>
                   </td>
                 </tr>
               </tbody>

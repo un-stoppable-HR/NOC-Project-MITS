@@ -65,7 +65,17 @@ router.get("/more-details", function (req, res) {
     return res.status(401).render("401");
   }
 
-  res.render("more-details");
+  const moreDetails = req.session.moreDetails;
+
+  if (!moreDetails) {
+    return res.redirect("/");
+  }
+
+  req.session.moreDetails = null;
+
+  req.session.save(function () {
+    res.render("more-details", { moreDetails: moreDetails });
+  });
 });
 
 router.post("/signup", async function (req, res) {
