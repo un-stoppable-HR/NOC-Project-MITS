@@ -14,6 +14,12 @@
     </header>
 
     <main>
+      <% if(statusStats.count_approved === 0 && statusStats.count_pending === 0 && statusStats.count_rejected === 0) { %>
+        <section class="alert">
+            <h1>There are currently no NOCs to process</h1>
+            <h2>Please check back later !</h2>
+        </section>
+      <% } else { %>
         <section class="heading">
             <h1>NOC - STATISTICS</h1>
         </section>
@@ -90,6 +96,7 @@
           </section>
         </section>
       </section>
+      <% } %>
     </main>
 
     <footer><%- include("includes/footer") %></footer>

@@ -12,49 +12,55 @@
       <%- include("includes/main-header") %> 
       <%- include("includes/nav-header") %>
     </header>
-
+    
     <main>
-        <section class="heading">
-            <h1>NOC - STATISTICS</h1>
+      <% if(statusStats.count_approved === 0 && statusStats.count_pending === 0 && statusStats.count_rejected === 0) { %>
+        <section class="alert">
+            <h1>There are currently no NOCs to process</h1>
+            <h2>Please check back later !</h2>
         </section>
-
+        <% } else { %>
+      <section class="heading">
+          <h1>NOC - STATISTICS</h1>
+      </section>
+      
       <ol class="noc-stats">
         <li>
-            <section class="noc-stats-details-container">
-              <section class="noc-stats-details-heading">
-                <h1>Approved NOC's</h1>
-              </section>
-              <section class="noc-stats-details-body">
-                <p>10</p>
-              </section>
+          <section class="noc-stats-details-container">
+            <section class="noc-stats-details-heading">
+              <h1>Approved NOC's</h1>
             </section>
+            <section class="noc-stats-details-body">
+              <p><%= statusStats.count_approved %></p>
+            </section>
+          </section>
         </li>
         <li>
-            <section class="noc-stats-details-container">
-              <section class="noc-stats-details-heading">
-                <h1>Pending NOC's</h1>
-              </section>
-              <section class="noc-stats-details-body">
-                <p>10</p>
-              </section>
+          <section class="noc-stats-details-container">
+            <section class="noc-stats-details-heading">
+              <h1>Pending NOC's</h1>
             </section>
+            <section class="noc-stats-details-body">
+              <p><%= statusStats.count_pending %></p>
+            </section>
+          </section>
         </li>
         <li>
-            <section class="noc-stats-details-container">
-              <section class="noc-stats-details-heading">
-                <h1>Rejected NOC's</h1>
-              </section>
-              <section class="noc-stats-details-body">
-                <p>10</p>
-              </section>
+          <section class="noc-stats-details-container">
+            <section class="noc-stats-details-heading">
+              <h1>Rejected NOC's</h1>
             </section>
+            <section class="noc-stats-details-body">
+              <p><%= statusStats.count_rejected %></p>
+            </section>
+          </section>
         </li>
       </ol>
-
-      <section class="table_parent_container">
-        <section class="table_container">
-          <section class="table_header">
-            <h1>NO OBJECTION CERTIFICATES - Status</h1>
+      
+          <section class="table_parent_container">
+            <section class="table_container">
+              <section class="table_header">
+                <h1>NO OBJECTION CERTIFICATES - Status</h1>
           </section>
           <section class="table_body">
             <table>
@@ -70,41 +76,29 @@
                 </tr>
               </thead>
               <tbody>
-                <% for (let i = 1; i <= 50; i += 3) { %>
+                <% let serialNo=1 %>
+                <% for (const noc of nocs) { %>
                 <tr>
-                  <td><%= i %></td>
-                  <td>0901IO201035</td>
-                  <td>Jayesh Patidar</td>
-                  <td>Google</td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td><p class="status pending">Pending</p></td>
-                  <td><button class="btn">View</button></td>
+                  <form action="/dashboard-department/<%= noc.noc_id %>" method="POST">
+                    <td><%= serialNo %></td>
+                    <td><%= noc.enrollment_no %></td>
+                    <td><%= noc.student_name %></td>
+                    <td><%= noc.organization_name %></td>
+                    <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
+                    <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
+                    <td><button class="btn">View</button></td>
+                  </form>
                 </tr>
-                <tr>
-                  <td><%= i + 1 %></td>
-                  <td>0901IO201035</td>
-                  <td>Jayesh Patidar</td>
-                  <td>Google</td>
-                  <td><p class="status rejected">Rejected</p></td>
-                  <td><p class="status pending">Pending</p></td>
-                  <td><button class="btn">View</button></td>
-                </tr>
-                <tr>
-                  <td><%= i + 2 %></td>
-                  <td>0901IO201035</td>
-                  <td>Jayesh Patidar</td>
-                  <td>Google</td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td><button class="btn">View</button></td>
-                </tr>
+                <% serialNo++ %>
                 <% } %>
               </tbody>
             </table>
           </section>
         </section>
       </section>
-    </main>
+    <% } %>
+
+  </main>
 
     <footer><%- include("includes/footer") %></footer>
   </body>

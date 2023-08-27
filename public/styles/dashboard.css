@@ -172,6 +172,17 @@ tbody tr:nth-child(odd) {
   color: var(--color-status-pending-text);
 }
 
+.alert {
+  border: 1px solid var(--color-status-rejected-text);
+  background-color: var(--color-status-rejected-bg);
+  color: var(--color-status-rejected-text);
+  text-transform: uppercase;
+  margin: 1rem;
+  padding: 0.25rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
 .btn,
 .btn-alt {
   font-size: 1rem;
