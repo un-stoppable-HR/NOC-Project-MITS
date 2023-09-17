@@ -40,48 +40,55 @@
         </section>
       </section>
 
-      <section class="table_parent_container">
-        <section class="table_container">
-          <section class="table_header">
-            <h1>NO OBJECTION CERTIFICATES - Status</h1>
-          </section>
-          <section class="table_body">
-            <table>
-              <thead>
-                <tr>
-                  <th>S.No</th>
-                  <th>Company Name</th>
-                  <th>Department Status</th>
-                  <th>T&P Status</th>
-                  <th>Internship days</th>
-                  <th>Internship starting date</th>
-                  <th>Internship End date</th>
-                  <th>More Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% let serialNo=1 %>
-                <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
-                <% for (const noc of nocs) { %>
-                <tr>
-                  <form action="/dashboard-student/<%= noc.noc_id %>" method="POST">
-                    <td><%= serialNo %></td>
-                    <td><%= noc.organization_name %></td>
-                    <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
-                    <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
-                    <td><%= noc.internship_days %></td>
-                    <td><%= new Date(noc.internship_start_date).toLocaleDateString(undefined, options) %></td>
-                    <td><%= new Date(noc.internship_end_date).toLocaleDateString(undefined, options) %></td>
-                    <td><button class="btn">View</button></td>
-                  </form>
-                </tr>
-                <% serialNo++ %>
-                <% } %>
-              </tbody>
-            </table>
+      <% if(nocs.length != 0) { %> 
+        <section class="table_parent_container">
+          <section class="table_container">
+            <section class="table_header">
+              <h1>NO OBJECTION CERTIFICATES - Status</h1>
+            </section>
+            <section class="table_body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Company Name</th>
+                    <th>Department Status</th>
+                    <th>T&P Status</th>
+                    <th>Internship days</th>
+                    <th>Internship starting date</th>
+                    <th>Internship End date</th>
+                    <th>More Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% let serialNo=1 %>
+                  <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+                  <% for (const noc of nocs) { %>
+                  <tr>
+                    <form action="/dashboard-student/<%= noc.noc_id %>" method="POST">
+                      <td><%= serialNo %></td>
+                      <td><%= noc.organization_name %></td>
+                      <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
+                      <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
+                      <td><%= noc.internship_days %></td>
+                      <td><%= new Date(noc.internship_start_date).toLocaleDateString(undefined, options) %></td>
+                      <td><%= new Date(noc.internship_end_date).toLocaleDateString(undefined, options) %></td>
+                      <td><button class="btn">View</button></td>
+                    </form>
+                  </tr>
+                  <% serialNo++ %>
+                  <% } %>
+                </tbody>
+              </table>
+            </section>
           </section>
         </section>
-      </section>
+      <% } else { %>
+        <section class="alert">
+          <h1>There are currently no NOCs to process</h1>
+          <h2>Please apply for a new one and check back later !</h2>
+        </section>
+      <% } %>
     </main>
 
     <footer>

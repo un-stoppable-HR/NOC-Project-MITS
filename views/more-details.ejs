@@ -16,6 +16,7 @@
     </header>
 
     <main>
+      <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
       <section class="details-parent-container">
         <section class="student-details-container">
           <section class="student-details-heading">
@@ -142,7 +143,7 @@
                 <tr>
                   <td>
                     <b>NOC Application Date - </b
-                    ><span><%= moreDetails.date %></span>
+                    ><span><%= new Date(moreDetails.date).toLocaleDateString(undefined, options) %></span>
                   </td>
                 </tr>
                 <tr>
@@ -180,13 +181,13 @@
                 <tr>
                   <td>
                     <b>Internship Start Date - </b
-                    ><span><%= moreDetails.internship_start_date %></span>
+                    ><span><%= new Date(moreDetails.internship_start_date).toLocaleDateString(undefined, options) %></span>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <b>Internship End Date - </b
-                    ><span><%= moreDetails.internship_end_date %></span>
+                    ><span><%= new Date(moreDetails.internship_end_date).toLocaleDateString(undefined, options) %></span>
                   </td>
                 </tr>
                 <tr>
@@ -219,40 +220,42 @@
         </section>
       </section>
 
-      <section class="NOC-form-parent-container">
-        <div class="NOC-form-container">
-          <h4 class="noc-form-sub-heading">Update Status</h4>
-          <form action="" method="">
-            <ul class="input-fields-list">
-              <li>
-                <label for="status">Status</label>
-                <select name="status" id="status" required>
-                  <option value="" disabled selected hidden>
-                    Choose Status
-                  </option>
-                  <option value="approved">Approved</option>
-                  <option value="pending">Pending</option>
-                  <option value="rejected">Rejected</option>
-                </select>
-              </li>
-              <li>
-                <label for="query">Query</label>
-                <textarea
-                  name="query"
-                  id="query"
-                  cols="80"
-                  rows="10"
-                ></textarea>
-              </li>
-            </ul>
+      <% if(locals.role === "tnp" || locals.role === "department") { %>
+        <section class="NOC-form-parent-container">
+          <div class="NOC-form-container">
+            <h4 class="noc-form-sub-heading">Update Status</h4>
+            <form action="" method="">
+              <ul class="input-fields-list">
+                <li>
+                  <label for="status">Status</label>
+                  <select name="status" id="status" required>
+                    <option value="" disabled selected hidden>
+                      Choose Status
+                    </option>
+                    <option value="approved">Approved</option>
+                    <option value="pending">Pending</option>
+                    <option value="rejected">Rejected</option>
+                  </select>
+                </li>
+                <li>
+                  <label for="query">Query</label>
+                  <textarea
+                    name="query"
+                    id="query"
+                    cols="80"
+                    rows="10"
+                  ></textarea>
+                </li>
+              </ul>
 
-            <div class="button-container">
-              <button type="reset" class="btn-alt">Clear</button>
-              <button type="submit" class="btn">Update</button>
-            </div>
-          </form>
-        </div>
-      </section>
+              <div class="button-container">
+                <button type="reset" class="btn-alt">Clear</button>
+                <button type="submit" class="btn">Update</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      <% } %>
     </main>
 
     <footer><%- include("includes/footer") %></footer>
