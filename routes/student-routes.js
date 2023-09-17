@@ -31,7 +31,7 @@ const upload = multer({
 
 const router = express.Router();
 
-router.get("/dashboard-student", function (req, res) {
+router.get("/dashboard-student", async function (req, res) {
   if (!res.locals.isAuth) {
     return res.status(401).render("401");
   }
@@ -39,12 +39,75 @@ router.get("/dashboard-student", function (req, res) {
   if (res.locals.role !== "student") {
     return res.status(403).render("403");
   }
-
+  
   if (!res.locals.isRegisteredStudent) {
     return res.redirect("/student-personal-details");
   }
+  
+  const query1 = `
+  SELECT 
+    students.name AS student_name,
+    students.branch_id,
+    students.department_id,
+    students.enrollment_no
+  FROM
+    students
+  WHERE
+    user_id = ?;
+  `;
 
-  res.render("dashboard-student");
+  const [studentDetails] = await db.query(query1, req.session.user.id);
+
+  const query2 = `
+  SELECT 
+    noc_applications.noc_id,
+    noc_applications.internship_days,
+    noc_applications.internship_start_date,
+    noc_applications.internship_end_date,
+    organizations.name AS organization_name,
+    organizations.location AS organization_location,
+    department_approval.approval_status AS department_status,
+    tpo_approval.approval_status AS tpo_status
+  FROM 
+    noc_applications
+    INNER JOIN organizations 
+      ON noc_applications.org_id = organizations.org_id
+    INNER JOIN department_approval
+      ON noc_applications.noc_id = department_approval.noc_id
+    INNER JOIN tpo_approval
+      ON noc_applications.noc_id = tpo_approval.noc_id
+    WHERE
+      noc_applications.enrollment_no = ?;
+  `;
+
+  const [nocDetails] = await db.query(query2, studentDetails[0].enrollment_no);
+
+  const branchID = studentDetails[0].branch_id;
+  const departmentID = studentDetails[0].department_id;
+
+  const query3 = `
+  SELECT branch_name FROM branches WHERE branch_id = ?;
+  `;
+
+  const [branchName] = await db.query(query3, branchID);
+
+  const query4 = `
+  SELECT department_name FROM departments WHERE department_id = ?;
+  `;
+
+  const [departmentName] = await db.query(query4, departmentID);
+
+  const nocs = [
+    ...nocDetails,
+  ];
+
+  const studentInfo = {
+    ...studentDetails[0],
+    ...branchName[0],
+    ...departmentName[0],
+  };
+
+  res.render("dashboard-student", { nocs: nocs, studentInfo: studentInfo });
 });
 
 router.get("/student-personal-details", function (req, res) {
@@ -132,7 +195,7 @@ router.post(
       userData.internshipEndDate,
       userData.applyingThrough,
       uploadedOfferLetter.path,
-      userData.stipend
+      userData.stipend,
     ];
 
     const query2 = `
@@ -141,9 +204,9 @@ router.post(
     `;
 
     const [nocs] = await db.query(query2, [data2]);
-    
+
     const nocID = nocs.insertId;
-    
+
     const query3 = `
     SELECT department_id
     FROM students
@@ -151,19 +214,19 @@ router.post(
     `;
 
     const [departmentID] = await db.query(query3, req.session.user.id);
-    
+
     const query4 = `
     SELECT coordinator_id
     FROM department_coordinator
     WHERE department_id = ?;
     `;
 
-    const [coordinatorID] = await db.query(query4, departmentID[0].department_id);
-    
-    const data5 = [
-      coordinatorID[0].coordinator_id,
-      nocID
-    ];
+    const [coordinatorID] = await db.query(
+      query4,
+      departmentID[0].department_id
+    );
+
+    const data5 = [coordinatorID[0].coordinator_id, nocID];
 
     const query5 = `
     INSERT INTO department_approval (coordinator_id, noc_id) 
@@ -178,11 +241,8 @@ router.post(
     `;
 
     const [tpoID] = await db.query(query6);
-    
-    const data7 = [
-      tpoID[0].tpo_id,
-      nocID
-    ];
+
+    const data7 = [tpoID[0].tpo_id, nocID];
 
     const query7 = `
     INSERT INTO tpo_approval (tpo_id, noc_id) 

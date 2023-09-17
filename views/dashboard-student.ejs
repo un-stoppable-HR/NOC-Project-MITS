@@ -23,16 +23,16 @@
             <table>
               <tbody>
                 <tr>
-                  <td><b>NAME - </b><span>STUDENT'S NAME</span></td>
+                  <td><b>NAME - </b><span><%= studentInfo.student_name %></span></td>
                 </tr>
                 <tr>
-                  <td><b>ENROLLMENT NO. - </b><span>STUDENT'S ENROLLMENT NO.</span></td>
+                  <td><b>ENROLLMENT NO. - </b><span><%= studentInfo.enrollment_no %></span></td>
                 </tr>
                 <tr>
-                  <td><b>BRANCH - </b><span>STUDENT'S BRANCH</span></td>
+                  <td><b>BRANCH - </b><span><%= studentInfo.branch_name %></span></td>
                 </tr>
                 <tr>
-                  <td><b>DEPARTMENT - </b><span>STUDENT'S DEPARTMENT</span></td>
+                  <td><b>DEPARTMENT - </b><span><%= studentInfo.department_name %></span></td>
                 </tr>
               </tbody>
             </table>
@@ -51,8 +51,8 @@
                 <tr>
                   <th>S.No</th>
                   <th>Company Name</th>
-                  <th>Company Location</th>
-                  <th>Status</th>
+                  <th>Department Status</th>
+                  <th>T&P Status</th>
                   <th>Internship days</th>
                   <th>Internship starting date</th>
                   <th>Internship End date</th>
@@ -60,37 +60,22 @@
                 </tr>
               </thead>
               <tbody>
-                <% for (let i = 1; i <= 50; i += 3) { %>
+                <% let serialNo=1 %>
+                <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+                <% for (const noc of nocs) { %>
                 <tr>
-                  <td><%= i %></td>
-                  <td>Google</td>
-                  <td>Remote</td>
-                  <td><p class="status approved">Approved</p></td>
-                  <td>60</td>
-                  <td>15 May, 2023</td>
-                  <td>14 July, 2023</td>
-                  <td><button class="btn">View</button></td>
+                  <form action="/dashboard-student/<%= noc.noc_id %>" method="POST">
+                    <td><%= serialNo %></td>
+                    <td><%= noc.organization_name %></td>
+                    <td><p class="status <%= noc.department_status %>"><%= noc.department_status %></p></td>
+                    <td><p class="status <%= noc.tpo_status %>"><%= noc.tpo_status %></p></td>
+                    <td><%= noc.internship_days %></td>
+                    <td><%= new Date(noc.internship_start_date).toLocaleDateString(undefined, options) %></td>
+                    <td><%= new Date(noc.internship_end_date).toLocaleDateString(undefined, options) %></td>
+                    <td><button class="btn">View</button></td>
+                  </form>
                 </tr>
-                <tr>
-                  <td><%= i + 1 %></td>
-                  <td>Google</td>
-                  <td>Remote</td>
-                  <td><p class="status pending">Pending</p></td>
-                  <td>60</td>
-                  <td>15 May, 2023</td>
-                  <td>14 July, 2023</td>
-                  <td><button class="btn">View</button></td>
-                </tr>
-                <tr>
-                  <td><%= i + 2 %></td>
-                  <td>Google</td>
-                  <td>Remote</td>
-                  <td><p class="status rejected">Rejected</p></td>
-                  <td>60</td>
-                  <td>15 May, 2023</td>
-                  <td>14 July, 2023</td>
-                  <td><button class="btn">View</button></td>
-                </tr>
+                <% serialNo++ %>
                 <% } %>
               </tbody>
             </table>
