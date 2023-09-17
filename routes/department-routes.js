@@ -13,6 +13,16 @@ router.get("/dashboard-department", async function (req, res) {
     return res.status(403).render("403");
   }
 
+  let updateStatus = req.session.updateStatus;
+
+  if (!updateStatus) {
+    updateStatus = {
+      hasMessage: false,
+    };
+  }
+
+  req.session.updateStatus = null;
+
   const query1 = `
   SELECT department_id
   FROM department_coordinator 
@@ -64,7 +74,7 @@ router.get("/dashboard-department", async function (req, res) {
 
   const [statusStats] = await db.query(query3, departmentID);
 
-  res.render("dashboard-department", { nocs: nocs, statusStats: statusStats[0] });
+  res.render("dashboard-department", { nocs: nocs, statusStats: statusStats[0], updateStatus: updateStatus });
 });
 
 router.post("/dashboard-department/:nocID", async function (req, res) {
@@ -153,6 +163,42 @@ router.post("/dashboard-department/:nocID", async function (req, res) {
 
   req.session.save(function () {
     res.redirect("/more-details");
+  });
+});
+
+router.post("/department/update-noc-status/:nocID", async function (req, res) {
+  if (!res.locals.isAuth) {
+    return res.status(401).render("401");
+  }
+
+  if (res.locals.role !== "department") {
+    return res.status(403).render("403");
+  }
+
+  const nocID = req.params.nocID;
+  const updateData = req.body;
+
+  const query1Data = [updateData.status, updateData.query, nocID];
+
+  const query1 = `
+  UPDATE 
+    department_approval 
+  SET 
+    approval_status = ?, 
+    query = ?
+  WHERE 
+    noc_id = ?;
+  `;
+
+  await db.query(query1, query1Data);
+
+  req.session.updateStatus = {
+    hasMessage: true,
+    message: "Status Updated Successfully!",
+  };
+
+  req.session.save(function () {
+    res.redirect("/");
   });
 });
 

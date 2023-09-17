@@ -71,20 +71,10 @@ router.get("/more-details", function (req, res) {
     return res.redirect("/");
   }
 
-  // req.session.moreDetails = null;
-
-  let updateStatus = req.session.updateStatus;
-
-  if (!updateStatus) {
-    updateStatus = {
-      hasMessage: false,
-    };
-  }
-
-  req.session.updateStatus = null;
+  req.session.moreDetails = null;
 
   req.session.save(function () {
-    res.render("more-details", { moreDetails: moreDetails, updateStatus: updateStatus });
+    res.render("more-details", { moreDetails: moreDetails});
   });
 });
 
