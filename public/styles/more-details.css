@@ -24,6 +24,10 @@
   /* font-size: 1.25rem; */
 }
 
+.query {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .student-details-container {
     width: 80%;

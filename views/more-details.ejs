@@ -32,6 +32,15 @@
                     </p>
                   </td>
                 </tr>
+                <tr>
+                  <td class="query">
+                    <% if(moreDetails.department_query && moreDetails.department_query.trim().length != 0) { %>
+                      <%= moreDetails.department_query.trim() %>
+                    <% } else { %>
+                      Department queries will be displayed here !
+                    <% } %>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </section>
@@ -48,6 +57,15 @@
                     <p class="status <%= moreDetails.tpo_status %>">
                       <%= moreDetails.tpo_status %>
                     </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="query">
+                    <% if(moreDetails.tpo_query && moreDetails.tpo_query.trim().length != 0) { %>
+                      <%= moreDetails.tpo_query.trim() %>
+                    <% } else { %>
+                      T&P queries will be displayed here !
+                    <% } %>
                   </td>
                 </tr>
               </tbody>

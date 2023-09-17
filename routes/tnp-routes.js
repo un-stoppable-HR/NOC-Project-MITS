@@ -99,7 +99,9 @@ router.post("/dashboard-tnp/:nocID", async function (req, res) {
     organizations.address AS organization_address,
     organizations.website AS organization_website,
     department_approval.approval_status AS department_status,
-    tpo_approval.approval_status AS tpo_status
+    tpo_approval.approval_status AS tpo_status,
+    department_approval.query AS department_query,
+    tpo_approval.query AS tpo_query
   FROM 
     noc_applications
     INNER JOIN organizations 
