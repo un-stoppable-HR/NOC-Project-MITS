@@ -13,6 +13,16 @@ router.get("/dashboard-tnp", async function (req, res) {
     return res.status(403).render("403");
   }
 
+  let updateStatus = req.session.updateStatus;
+
+  if (!updateStatus) {
+    updateStatus = {
+      hasMessage: false,
+    };
+  }
+
+  req.session.updateStatus = null;
+
   const query1 = `
   SELECT 
     noc_applications.noc_id,
@@ -47,7 +57,7 @@ router.get("/dashboard-tnp", async function (req, res) {
 
   const [statusStats] = await db.query(query2);
 
-  res.render("dashboard-tnp", { nocs: nocs, statusStats: statusStats[0] });
+  res.render("dashboard-tnp", { nocs: nocs, statusStats: statusStats[0], updateStatus: updateStatus });
 });
 
 router.post("/dashboard-tnp/:nocID", async function (req, res) {
@@ -230,7 +240,7 @@ router.post("/tnp/update-noc-status/:nocID", async function (req, res) {
   };
 
   req.session.save(function () {
-    res.redirect("/more-details");
+    res.redirect("/");
   });
 });
 

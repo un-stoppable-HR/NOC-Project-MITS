@@ -14,6 +14,11 @@
     </header>
 
     <main>
+      <% if(updateStatus.hasMessage) { %>
+        <section class="alert-green">
+          <h1><%= updateStatus.message %></h1>
+        </section>
+      <% } %>
       <% if(statusStats.count_approved === 0 && statusStats.count_pending === 0 && statusStats.count_rejected === 0) { %>
         <section class="alert">
             <h1>There are currently no NOCs to process</h1>
