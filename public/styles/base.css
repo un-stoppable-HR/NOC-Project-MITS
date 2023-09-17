@@ -182,6 +182,19 @@ footer span {
   border: none;
 }
 
+.btn-download {
+  font: inherit;
+  font-size: 1.25rem;
+  color: var(--color-primary-100);
+  background-color: var(--color-primary-400);
+  padding: 0.5rem 0.75rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--color-primary-400);
+  margin: 2rem auto 0 auto;
+}
+
 .btn-nav:hover {
   background-color: var(--color-primary-100);
   color: var(--color-primary-500);
@@ -189,6 +202,12 @@ footer span {
 }
 
 .btn:hover {
+  color: var(--color-primary-400);
+  background-color: var(--color-primary-100);
+  cursor: pointer;
+}
+
+.btn-download:hover {
   color: var(--color-primary-400);
   background-color: var(--color-primary-100);
   cursor: pointer;

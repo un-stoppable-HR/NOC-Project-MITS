@@ -16,6 +16,11 @@
     </header>
 
     <main>
+      <% if(moreDetails.department_status === "approved" && moreDetails.tpo_status === "approved") { %>
+        <button class="btn-download"><span class="material-symbols-outlined">
+          download
+          </span>Download NOC</button>
+      <% } %>
       <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
       <section class="details-parent-container">
         <section class="student-details-container">

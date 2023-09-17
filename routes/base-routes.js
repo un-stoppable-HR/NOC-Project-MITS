@@ -229,4 +229,8 @@ router.post("/logout", function (req, res) {
   });
 });
 
+router.get("/noc", function (req, res) {
+  res.render("noc");
+});
+
 module.exports = router;
