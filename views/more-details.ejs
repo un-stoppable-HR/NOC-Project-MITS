@@ -16,6 +16,11 @@
     </header>
 
     <main>
+      <% if(updateStatus.hasMessage) { %>
+        <section class="alert-green">
+          <h1><%= updateStatus.message %></h1>
+        </section>
+      <% } %>
       <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
       <section class="details-parent-container">
         <section class="student-details-container">
@@ -224,7 +229,7 @@
         <section class="NOC-form-parent-container">
           <div class="NOC-form-container">
             <h4 class="noc-form-sub-heading">Update Status</h4>
-            <form action="" method="">
+            <form action="/<%= locals.role %>/update-noc-status/<%= moreDetails.noc_id %>" method="POST">
               <ul class="input-fields-list">
                 <li>
                   <label for="status">Status</label>

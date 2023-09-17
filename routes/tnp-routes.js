@@ -198,4 +198,40 @@ router.post("/admin-panel-tnp/:userID", async function (req, res) {
   res.redirect("/admin-panel-tnp");
 });
 
+router.post("/tnp/update-noc-status/:nocID", async function (req, res) {
+  if (!res.locals.isAuth) {
+    return res.status(401).render("401");
+  }
+
+  if (res.locals.role !== "tnp") {
+    return res.status(403).render("403");
+  }
+
+  const nocID = req.params.nocID;
+  const updateData = req.body;
+
+  const query1Data = [updateData.status, updateData.query, nocID];
+
+  const query1 = `
+  UPDATE 
+    tpo_approval 
+  SET 
+    approval_status = ?, 
+    query = ?
+  WHERE 
+    noc_id = ?;
+  `;
+
+  await db.query(query1, query1Data);
+
+  req.session.updateStatus = {
+    hasMessage: true,
+    message: "Status Updated Successfully!",
+  };
+
+  req.session.save(function () {
+    res.redirect("/more-details");
+  });
+});
+
 module.exports = router;
