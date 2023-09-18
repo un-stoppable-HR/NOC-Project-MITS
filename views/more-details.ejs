@@ -17,7 +17,7 @@
 
     <main>
       <% if(moreDetails.department_status === "approved" && moreDetails.tpo_status === "approved") { %>
-        <form action="/download-noc/<%= moreDetails.noc_id %>" method="POST">
+        <form action="/download-noc/<%= moreDetails.noc_id %>" method="POST" target="_blank">
           <button class="btn-download">
             <span class="material-symbols-outlined"> download </span> Download NOC
           </button>
