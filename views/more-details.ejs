@@ -17,9 +17,11 @@
 
     <main>
       <% if(moreDetails.department_status === "approved" && moreDetails.tpo_status === "approved") { %>
-        <button class="btn-download"><span class="material-symbols-outlined">
-          download
-          </span>Download NOC</button>
+        <form action="/download-noc/<%= moreDetails.noc_id %>" method="POST">
+          <button class="btn-download">
+            <span class="material-symbols-outlined"> download </span> Download NOC
+          </button>
+        </form>
       <% } %>
       <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
       <section class="details-parent-container">

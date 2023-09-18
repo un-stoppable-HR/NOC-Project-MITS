@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/styles/noc.css" />
   </head>
   <body>
+    <% const options1 = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+    <% const options2 = { year: 'numeric' }; %>
+
     <div class="page">
       <div class="top">
         <div class="cl-logo">
@@ -29,19 +32,22 @@
       <div class="ref-date">
         <h5 class="ref">
           Ref :
-          <p class="reference-number">T&P/22/P</p>
+          <p class="reference-number">T&P/<%= new Date(nocDetails.tpo_approval_date).toLocaleDateString(undefined, options2) %>/<%= nocDetails.noc_id %></p>
         </h5>
         <h5 class="date">
           Date :
-          <p class="reference-date">22/2/2022</p>
+          <p class="reference-date"><%= new Date(nocDetails.tpo_approval_date).toLocaleDateString(undefined, options1) %></p>
         </h5>
       </div>
       <br />
       <div class="main-content">
         <p>To,</p>
-        <p>Hr Team</p>
-        <p>CEO , Infosys</p>
-        <p>ONGC, Bhopal</p>
+        <% if (nocDetails.person_receiving_noc_name != "NA") { %>
+          <p><%= nocDetails.person_receiving_noc_name %>,</p>
+        <% } %>
+        <p><%= nocDetails.person_receiving_noc_designation %>,</p>
+        <p><%= nocDetails.organization_name %>,</p>
+        <p><%= nocDetails.organization_address %></p>
         <br /><br />
         <p>Dear Sir/Ma’am,</p>
         <br />
@@ -57,21 +63,19 @@
         <p>
           We will be highly obliged, if the following student is/are permitted
           to undergo Training / Internship at your esteemed Organization for a
-          period of 23/05/2023 to 20/06/2023.
+          period of <%= new Date(nocDetails.internship_start_date).toLocaleDateString(undefined, options1) %> to <%= new Date(nocDetails.internship_end_date).toLocaleDateString(undefined, options1) %>.
         </p>
         <br />
         <table>
           <tr>
-            <th>S.No.</th>
             <th>Name of the Student</th>
             <th>Enrollment No.</th>
             <th>Branch</th>
           </tr>
           <tr>
-            <td>1.</td>
-            <td>Test Singh</td>
-            <td>201IO201035</td>
-            <td>B.Tech - Internt Of Thinks(IT)</td>
+            <td><%= nocDetails.student_name %></td>
+            <td><%= nocDetails.enrollment_no %></td>
+            <td><%= nocDetails.branch_name %></td>
           </tr>
         </table>
         <br />
