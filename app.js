@@ -2,18 +2,16 @@ const path = require("path");
 
 const express = require("express");
 const session = require("express-session");
-const MySQLStore = require("express-mysql-session")(session);
 
 const db = require("./data/database");
 
+const createSessionConfig = require('./config/session');
 const baseRoutes = require("./routes/base-routes");
 const studentRoutes = require("./routes/student-routes");
 const departmentRoutes = require("./routes/department-routes");
 const tnpRoutes = require("./routes/tnp-routes");
 
 const app = express();
-
-const sessionStore = new MySQLStore({}, db.pool);
 
 const port = 3000;
 
@@ -29,27 +27,9 @@ app.use(express.static("public"));
 
 app.use("/offerLetters", express.static("offerLetters"));
 
-app.use(
-  session({
-    // key: "user-cookie",
-    secret: "super-secret",
-    store: sessionStore,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+const sessionConfig = createSessionConfig();
 
-// Optionally use onReady() to get a promise that resolves when store is ready.
-sessionStore
-  .onReady()
-  .then(() => {
-    // MySQL session store ready for use.
-    console.log("MySQLStore ready");
-  })
-  .catch((error) => {
-    // Something went wrong.
-    console.error(error);
-  });
+app.use(session(sessionConfig));
 
 app.use(async function (req, res, next) {
   const user = req.session.user;
